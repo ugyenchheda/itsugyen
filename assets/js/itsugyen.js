@@ -10,8 +10,7 @@ jQuery(document).ready(function() {
         "use strict";
         deviceScreen();
         date();
-        mobileDesign()
-        portfolioPopup();
+        mobileDesign();
         sidebarMenu();
         mapInit();
         mouseMagicCursor();
@@ -670,7 +669,6 @@ jQuery(document).ready(function() {
     }
 
     /*-------------------------  MAGNIFIC POPUP JS  -------------------------*/
-    function portfolioPopup() {
 
         "use strict";
 
@@ -710,7 +708,6 @@ jQuery(document).ready(function() {
                 });
             });
         }
-    }
 
     /*-------------------------  GOOGLE Map  -------------------------*/
     function mapInit() {
@@ -862,8 +859,6 @@ jQuery(document).ready(function() {
     }
 
     /*-------------------------  Mouse Magic Cursor  -------------------------*/
-
-    function mouseMagicCursor(){
         
         "use strict";
         
@@ -892,10 +887,7 @@ jQuery(document).ready(function() {
                 (t.style.visibility = "visible");
             }
         }
-    };
-
     /*-------------------------  Color Panllet  -------------------------*/
-    function ColorPallet() {
 
         "use strict";
 
@@ -929,11 +921,6 @@ jQuery(document).ready(function() {
         $("#color-switcher .pallet-button").click(function () {
             $("#color-switcher .color-pallet").toggleClass('show')
         })
-    }
-
-    /*-------------------------  Theme Option  -------------------------*/
-    function themeOption(){
-
         "use strict";
 
         $('.color-scheme li .dark-scheme').click(function() {
@@ -959,5 +946,4 @@ jQuery(document).ready(function() {
             $('.theme-skin li a').removeClass('active');
             $(this).addClass('active');
         });
-    }
-})
+});
