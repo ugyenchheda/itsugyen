@@ -1,21 +1,10 @@
 <?php
-/**
- * Ugyen
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package itsUgyen
- */
+//** * Template Name: The Ugyen */
 
 get_header();
 ?>
 
-<body class="max-width-d">
+
 
 <!-- Preloader -->
 <div id="line-loader">
@@ -59,7 +48,7 @@ get_header();
 <div class="left-side  nav-close">
   <div class="menu-content-align">
 	<div class="left-side-image">
-	  <img src="assets/img/webdesigner/profile-img.jpg" alt="/">
+	  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/profile-img.jpg" alt="/">
 	</div>
 	<h1 class="mt-1">Alex Martin</h1>
 	<a class="download-cv primary-button d-none d-lg-inline-block" href="javascript:void(0);">Download CV</a>
@@ -136,13 +125,13 @@ get_header();
 	<!-- <svg class="extend-icon" xmlns="http://www.w3.org/2000/svg" width="400" height="400" fill="currentColor" class="bi bi-laptop" viewBox="0 0 16 16">
 	  <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z"/>
 	</svg> -->
-	<img class="extend-icon" src="assets/img/webdesigner/responsive.png" alt="/">
+	<img class="extend-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/responsive.png" alt="/">
 	<div class="hero-center">
 	  <div class="container">
 		<div class="row">
 		  <div class="col-lg-12 text-center text-lg-start">
 			<div class="hero-image d-inline-block d-lg-none">
-			  <img src="assets/img/webdesigner/profile-img.jpg" alt="/">
+			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/profile-img.jpg" alt="/">
 			</div>
 			<div class="hero-content mt-4 mx-auto mx-lg-0 text-lg-left mt-lg-none">
 			  <p class="base-color">WEB DESIGNER</p>
@@ -177,7 +166,7 @@ get_header();
 		<div class="row">
 		  <div class="col-lg-5">
 			<div class="about-img">
-			  <img src="assets/img/webdesigner/about-img.jpg" alt="/">
+			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/about-img.jpg" alt="/">
 			  <div class="border-img"></div>
 			</div>
 		  </div>
@@ -221,7 +210,7 @@ get_header();
 		  <!-- Item-01 -->
 		  <div class="col-6 col-lg-3 my-4 count-item">
 			<div class="count-icon">
-			  <img src="assets/img/colorfull/prototype.png" alt="/">
+			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/prototype.png" alt="/">
 			</div>
 			<span class="timer count-number" data-from="0" data-to="286" data-speed="5000">0</span>
 			<p class="mb-0">Logo Design</p>
@@ -229,7 +218,7 @@ get_header();
 		  <!-- Item-02 -->
 		  <div class="col-6 col-lg-3 my-4 count-item">
 			<div class="count-icon">
-			  <img src="assets/img/colorfull/ui-design.png" alt="/">
+			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/ui-design.png" alt="/">
 			</div>
 			<span class="timer count-number" data-from="0" data-to="6549" data-speed="5000">0</span>
 			<p class="mb-0">Web Design</p>
@@ -237,7 +226,7 @@ get_header();
 		  <!-- Item-03 -->
 		  <div class="col-6 col-lg-3 my-4 count-item">
 			<div class="count-icon">
-			  <img src="assets/img/colorfull/layer.png" alt="/">
+			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/layer.png" alt="/">
 			</div>
 			<span class="timer count-number" data-from="0" data-to="793" data-speed="5000">0</span>
 			<p class="mb-0">Illustration</p>
@@ -245,7 +234,7 @@ get_header();
 		  <!-- Item-04 -->
 		  <div class="col-6 col-lg-3 my-4 count-item">
 			<div class="count-icon">
-			  <img src="assets/img/colorfull/checked.png" alt="/">
+			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/checked.png" alt="/">
 			</div>
 			<span class="timer count-number" data-from="0" data-to="286" data-speed="5000">0</span>
 			<p class="mb-0">Project Done</p>
@@ -433,7 +422,7 @@ get_header();
 			<p class="testimonial-comment">"My motivation is customer satisfaction. Trust me and trust your growth asset management to my expertise gained over the years. My goal is continuous achievement.!"</p>
 			<div class="testimonial-item">
 			  <div class="testimonial-image">
-				<img src="assets/img/colorfull/man.png" alt="/">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/man.png" alt="/">
 			  </div>
 			  <div class="testimonial-info">
 				<p class="mb-0">Leo Anderson</p>
@@ -446,7 +435,7 @@ get_header();
 			<p class="testimonial-comment">"My motivation is customer satisfaction. Trust me and trust your growth asset management to my expertise gained over the years. My goal is continuous achievement.!"</p>
 			<div class="testimonial-item">
 			  <div class="testimonial-image">
-				<img src="assets/img/colorfull/woman.png" alt="/">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/woman.png" alt="/">
 			  </div>
 			  <div class="testimonial-info">
 				<p class="mb-0">Hanah Smith</p>
@@ -459,7 +448,7 @@ get_header();
 			<p class="testimonial-comment">"My motivation is customer satisfaction. Trust me and trust your growth asset management to my expertise gained over the years. My goal is continuous achievement.!"</p>
 			<div class="testimonial-item">
 			  <div class="testimonial-image">
-				<img src="assets/img/colorfull/man1.png" alt="/">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/man1.png" alt="/">
 			  </div>
 			  <div class="testimonial-info">
 				<p class="mb-0">Angela Anderson</p>
@@ -484,7 +473,7 @@ get_header();
 			<!-- Item 01 -->
 			<div class="col-md-6">
 			  <div class="services-box">
-				<img src="assets/img/colorfull/ui-design.png" alt="/">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/ui-design.png" alt="/">
 				<div class="services-content">
 				  <h6 class="services-head">Web Design</h6>
 				  <p class="services-description mb-0">In a professional context it often happens that private or corporate clients corder a publication to be made.</p>
@@ -494,7 +483,7 @@ get_header();
 			<!-- Item 02 -->
 			<div class="col-md-6">
 			  <div class="services-box">
-				<img src="assets/img/colorfull/prototype.png" alt="/">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/prototype.png" alt="/">
 				<div class="services-content">
 				  <h6 class="services-head">Logo Design</h6>
 				  <p class="services-description mb-0">In a professional context it often happens that private or corporate clients corder a publication to be made.</p>
@@ -504,7 +493,7 @@ get_header();
 			<!-- Item 03 -->
 			<div class="col-md-6">
 			  <div class="services-box">
-				<img src="assets/img/colorfull/layer.png" alt="/">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/layer.png" alt="/">
 				<div class="services-content">
 				  <h6 class="services-head">Web Development</h6>
 				  <p class="services-description mb-0">In a professional context it often happens that private or corporate clients corder a publication to be made.</p>
@@ -514,7 +503,7 @@ get_header();
 			<!-- Item 04 -->
 			<div class="col-md-6">
 			  <div class="services-box">
-				<img src="assets/img/colorfull/movie-frame.png" alt="/">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/movie-frame.png" alt="/">
 				<div class="services-content">
 				  <h6 class="services-head">Short Animations</h6>
 				  <p class="services-description mb-0">In a professional context it often happens that private or corporate clients corder a publication to be made.</p>
@@ -524,7 +513,7 @@ get_header();
 			<!-- Item 05 -->
 			<div class="col-md-6">
 			  <div class="services-box">
-				<img src="assets/img/colorfull/bar-graph.png" alt="/">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/bar-graph.png" alt="/">
 				<div class="services-content">
 				  <h6 class="services-head">Advetising</h6>
 				  <p class="services-description mb-0">In a professional context it often happens that private or corporate clients corder a publication to be made.</p>
@@ -534,7 +523,7 @@ get_header();
 			<!-- Item 06 -->
 			<div class="col-md-6">
 			  <div class="services-box">
-				<img src="assets/img/colorfull/console.png" alt="/">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/console.png" alt="/">
 				<div class="services-content">
 				  <h6 class="services-head">Game Development</h6>
 				  <p class="services-description mb-0">In a professional context it often happens that private or corporate clients corder a publication to be made.</p>
@@ -691,7 +680,7 @@ get_header();
 		<div class="col-md-6 col-lg-4 portfolio-item sound">
 		  <div class="portfolio-box">
 			<div class="portfolio-image">
-			  <img src="assets/img/webdesigner/portfolio-item1.jpg" alt="/">
+			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/portfolio-item1.jpg" alt="/">
 			  <div class="portfolio-icon">
 				<a href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/221650664&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true" class="portfolio-magnific mfp-iframe">
 				  <i class="bi bi-music-note-beamed"></i>
@@ -708,7 +697,7 @@ get_header();
 		<div class="col-md-6 col-lg-4 portfolio-item sound">
 		  <div class="portfolio-box">
 			<div class="portfolio-image">
-			  <img src="assets/img/webdesigner/portfolio-item2.jpg" alt="/">
+			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/portfolio-item2.jpg" alt="/">
 			  <div class="portfolio-icon">
 				<a href="https://player.vimeo.com/video/158284739" class="portfolio-magnific mfp-iframe">
 				  <i class="bi bi-camera-video"></i>
@@ -725,7 +714,7 @@ get_header();
 		<div class="col-md-6 col-lg-4 portfolio-item sound">
 		  <div class="portfolio-box">
 			<div class="portfolio-image">
-			  <img src="assets/img/webdesigner/portfolio-item3.jpg" alt="/">
+			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/portfolio-item3.jpg" alt="/">
 			  <div class="portfolio-icon">
 				<a href="portfolio-01-colorfull.html" class="ajax-page-load">
 				  <i class="bi bi-file-earmark-text"></i>
@@ -741,7 +730,7 @@ get_header();
 		<!-- Item 04 -->
 		<div class="col-md-6 col-lg-4 portfolio-item mobiledesign webdesign">
 		  <div class="portfolio-image">
-			<img src="assets/img/webdesigner/portfolio-item4.jpg" alt="/">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/portfolio-item4.jpg" alt="/">
 			<div class="portfolio-icon">
 			  <a href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/221650664&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true" class="portfolio-magnific mfp-iframe">
 				<i class="bi bi-music-note-beamed"></i>
@@ -756,7 +745,7 @@ get_header();
 		<!-- Item 05 -->
 		<div class="col-md-6 col-lg-4 portfolio-item mobiledesign sound">
 		  <div class="portfolio-image">
-			<img src="assets/img/webdesigner/portfolio-item5.jpg" alt="/">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/portfolio-item5.jpg" alt="/">
 			<div class="portfolio-icon">
 			  <a href="https://player.vimeo.com/video/158284739" class="portfolio-magnific mfp-iframe">
 				<i class="bi bi-camera-video"></i>
@@ -771,7 +760,7 @@ get_header();
 		<!-- Item 06 -->
 		<div class="col-md-6 col-lg-4 portfolio-item mobiledesign">
 		  <div class="portfolio-image">
-			<img src="assets/img/webdesigner/portfolio-item6.jpg" alt="/">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/portfolio-item6.jpg" alt="/">
 			<div class="portfolio-icon">
 			  <a href="portfolio-01-colorfull.html" class="ajax-page-load">
 				<i class="bi bi-file-earmark-text"></i>
@@ -798,7 +787,7 @@ get_header();
 		  <div class="col-md-6">
 			<a href="webdesigner-blog-singel-colorfull.html" class="blog-box">
 			  <div class="blog-image">
-				<img src="assets/img/webdesigner/blog-item1.jpg" alt="/">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/blog-item1.jpg" alt="/">
 				<div class="blog-icon">
 				  <i class="bi bi-journal-text"></i>
 				</div>
@@ -816,7 +805,7 @@ get_header();
 		  <div class="col-md-6">
 			<a href="webdesigner-blog-singel-colorfull.html" class="blog-box">
 			  <div class="blog-image">
-				<img src="assets/img/webdesigner/blog-item2.jpg" alt="/">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/blog-item2.jpg" alt="/">
 				<div class="blog-icon">
 				  <i class="bi bi-journal-text"></i>
 				</div>
@@ -834,7 +823,7 @@ get_header();
 		  <div class="col-md-6">
 			<a href="webdesigner-blog-singel-colorfull.html" class="blog-box">
 			  <div class="blog-image">
-				<img src="assets/img/webdesigner/blog-item3.jpg" alt="/">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/blog-item3.jpg" alt="/">
 				<div class="blog-icon">
 				  <i class="bi bi-journal-text"></i>
 				</div>
@@ -852,7 +841,7 @@ get_header();
 		  <div class="col-md-6">
 			<a href="webdesigner-blog-singel-colorfull.html" class="blog-box">
 			  <div class="blog-image">
-				<img src="assets/img/webdesigner/blog-item4.jpg" alt="/">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/blog-item4.jpg" alt="/">
 				<div class="blog-icon">
 				  <i class="bi bi-journal-text"></i>
 				</div>
@@ -878,7 +867,7 @@ get_header();
 	  <h3 class="subtitle">Get in Touch</h3>
 	  <!-- Map -->
 	  <div class="row mt-5">
-		<div class="col-lg-12"><div id="my-map" data-location-lat="43.053454" data-location-lng="-76.144508" data-location-icon="assets/img/location-map.png"></div></div>
+		<div class="col-lg-12"><div id="my-map" data-location-lat="43.053454" data-location-lng="-76.144508" data-location-icon="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/location-map.png"></div></div>
 	  </div>
 	  <div class="row mt-4">
 		<!-- Address Info -->
@@ -888,7 +877,7 @@ get_header();
 			<div class="col-lg-12">
 			  <div class="info-box">
 				<div class="item-icon">
-				  <img src="assets/img/colorfull/message.svg" alt="/">
+				  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/message.svg" alt="/">
 				</div>
 				<div class="info-text">
 				  <h5>Mail Me</h5>
@@ -900,7 +889,7 @@ get_header();
 			<div class="col-lg-12">
 			  <div class="info-box">
 				<div class="item-icon">
-				  <img src="assets/img/colorfull/phone-call.svg" alt="/">
+				  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/phone-call.svg" alt="/">
 				</div>
 				<div class="info-text">
 				  <h5>Call Us On</h5>
@@ -912,7 +901,7 @@ get_header();
 			<div class="col-lg-12">
 			  <div class="info-box">
 				<div class="item-icon">
-				  <img src="assets/img/colorfull/location.svg" alt="/">
+				  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/location.svg" alt="/">
 				</div>
 				<div class="info-text">
 				  <h5>Visit office</h5>
@@ -1023,7 +1012,8 @@ get_header();
 <!-- Mouase Magic Cursor Start -->
 <div class="m-magic-cursor mmc-outer"></div>
   <div class="m-magic-cursor mmc-inner"></div>
+<!-- Mouase Magic Cursor End -->
+
 
 <?php
-get_sidebar();
 get_footer();
