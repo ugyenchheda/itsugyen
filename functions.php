@@ -8,55 +8,18 @@
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
 }
-
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
 function itsugyen_setup() {
-	/*
-		* Make theme available for translation.
-		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on itsUgyen, use a find and replace
-		* to change 'itsugyen' to the name of your theme in all the template files.
-		*/
 	load_theme_textdomain( 'itsugyen', get_template_directory() . '/languages' );
-
-	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
-
-	/*
-		* Let WordPress manage the document title.
-		* By adding theme support, we declare that this theme does not use a
-		* hard-coded <title> tag in the document head, and expect WordPress to
-		* provide it for us.
-		*/
 	add_theme_support( 'title-tag' );
-
-	/*
-		* Enable support for Post Thumbnails on posts and pages.
-		*
-		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		*/
 	add_theme_support( 'post-thumbnails' );
-
-	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'itsugyen' ),
 		)
 	);
-
-	/*
-		* Switch default core markup for search form, comment form, and comments
-		* to output valid HTML5.
-		*/
 	add_theme_support(
 		'html5',
 		array(
@@ -69,8 +32,6 @@ function itsugyen_setup() {
 			'script',
 		)
 	);
-
-	// Set up the WordPress core custom background feature.
 	add_theme_support(
 		'custom-background',
 		apply_filters(
@@ -81,15 +42,7 @@ function itsugyen_setup() {
 			)
 		)
 	);
-
-	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
-
-	/**
-	 * Add support for core custom logo.
-	 *
-	 * @link https://codex.wordpress.org/Theme_Logo
-	 */
 	add_theme_support(
 		'custom-logo',
 		array(
@@ -101,24 +54,10 @@ function itsugyen_setup() {
 	);
 }
 add_action( 'after_setup_theme', 'itsugyen_setup' );
-
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
 function itsugyen_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'itsugyen_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'itsugyen_content_width', 0 );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
 function itsugyen_widgets_init() {
 	register_sidebar(
 		array(
@@ -133,10 +72,6 @@ function itsugyen_widgets_init() {
 	);
 }
 add_action( 'widgets_init', 'itsugyen_widgets_init' );
-
-/**
- * Enqueue scripts and styles.
- */
 function itsugyen_scripts() {
 	wp_enqueue_style( 'itsugyen-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'itsugyen-style', 'rtl', 'replace' );
@@ -148,31 +83,44 @@ function itsugyen_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'itsugyen_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
 require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
 require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+//image sizes.....
+add_image_size('item_image', 300, 300, true);
+add_image_size('post_image_xs', 100, 90, true);
+add_image_size('post_image_s', 240, 186, true);
+add_image_size('widget_right_thumbnail', 232, 123, true);
+add_image_size('post_image_m', 263, 175, true);
+add_image_size('post_image_l', 387, 242, true);
+add_image_size('post_image_xl', 774, 484, true);
+add_image_size('post_feat_xl', 1090, 521, true);
+add_image_size('feature_galleries', 1090, 521, true);
+
+function itsugyen_main_scripts() {
+	wp_enqueue_style( 'itsugyen-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'bootstrap.min', get_template_directory_uri() . '/assets/css/bootstrap.css' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/jquery.mCustomScrollbar.css' );
+	wp_enqueue_style( 'magnific-popup', get_template_directory_uri() . '/assets/css/animate.min.css' );
+	wp_enqueue_style( 'nice-select', get_template_directory_uri() . '/assets/css/owl.carousel.min.css' );
+	wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/css/magnific-popup.css' );
+	wp_enqueue_style( 'stellarnav', get_template_directory_uri() . '/assets/css/style.css' );
+	wp_enqueue_style( 'default', get_template_directory_uri() . '/assets/css/colorfull.css' );
+
+   
+	
+	wp_enqueue_script( 'bootstrap-min', get_template_directory_uri() . '/assets/jquery-3.4.1.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'bootstrap-min', get_template_directory_uri() . '/assets/bootstrap.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'slick-min', get_template_directory_uri() . '/assets/js/jquery.mCustomScrollbar.concat.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'jquery.nice-select.min', get_template_directory_uri() . '/assets/js/jquery.countTo.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'stellarnav.min', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'jquery.magnific-popup.min', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/itsugyen.js', array(), _S_VERSION, true );
+}
+add_action( 'wp_enqueue_scripts', 'itsugyen_main_scripts' );

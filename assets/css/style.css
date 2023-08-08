@@ -1,38 +1,4 @@
-/*-----------------------------------------------------------
- * Template Name    : Arshia | Bootstrap 5 Responsive Personal V-Card Resume HTML Template
- * Author           : Retrina Group
- * Version          : 1.0.0
- * Created          : November 2021
- * File Description : Main css file of the template
- *------------------------------------------------------------
- */
 
-/*--------------------------------
-  1.GENERAL
-  2.PRELOADER
-  3.OVERLAY MENU
-  4.RIGHT SIDE
-  5.LEFT SIDE
-  6.NEXT & PREV PAGE
-  7.HERO SECTION
-  8.ABOUT SECTION
-  9.SKILLS
-  10.LANGUAGE SKILL
-  11.SERVICES
-  12.RESUME
-  13.TESTIMONIALS
-  14.PORTFOLIO
-  15.BLOG
-  16.CONTACT
-  17.PORTFOLIO SINGLE
-  18.BLOG SINGLE
-  19.BACKGROUND ANIMATION
-  20.MOUSE MAGIC CURSOR
-  21.RESPONSIVE MEDIA
---------------------------------*/
-
-
-/*------------------------- GENERAL -------------------------*/
 body {
   font-family: "Muli", sans-serif;
   font-weight: 300;
