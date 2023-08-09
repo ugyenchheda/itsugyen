@@ -6,6 +6,13 @@ $position_title = get_post_meta( get_the_ID(), 'position_title', true );
 $intro_part = get_post_meta( get_the_ID(), 'intro_part', true );
 $intro_banner = get_post_meta( get_the_ID(), 'intro_banner', true);
 $intro_cv = get_post_meta( get_the_ID(), 'intro_cv', true);
+$about_title = get_post_meta( get_the_ID(), 'about_title', true);
+$about_email = get_post_meta( get_the_ID(), 'about_email', true);
+$about_number = get_post_meta( get_the_ID(), 'about_number', true);
+$about_address = get_post_meta( get_the_ID(), 'about_address', true);
+$about_age = get_post_meta( get_the_ID(), 'about_age', true);
+$about_degree = get_post_meta( get_the_ID(), 'about_degree', true);
+$about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 ?>
 
 
@@ -135,9 +142,9 @@ $intro_cv = get_post_meta( get_the_ID(), 'intro_cv', true);
 			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/profile-img.jpg" alt="/">
 			</div>
 			<div class="ugyen-content mt-4 mx-auto mx-lg-0 text-lg-left mt-lg-none">
-			  <p class="base-color"><?php echo $position_title;  ?></p>
+			  <p class="base-color"><i class="bi bi-code-slash"></i> <?php echo $position_title;  ?></p>
 			  <h2><?php echo $intro_part; ?></h2>
-			  <div class="typing-demo"> Feel free to browse and know about my work...</div>
+			  <div class="typing-demo"><i class="bi bi-caret-right"></i> Feel free to browse and know about my work...</div>
 			</div>
 		  </div>
 		</div>
@@ -174,28 +181,28 @@ $intro_cv = get_post_meta( get_the_ID(), 'intro_cv', true);
 		  </div>
 		  <div class="col-lg-7">
 			<div class="about-description">
-			  <h3 class="mb-3">A short story about me , my mission, thinking and craft.</h3>
-			  <p class="about-text">I’m a web designer who aware of the tiny moments in a persons life that reveal greater truths. Aliquam erat volutpat. Nullam imperdiet sapien felis, non lobortis odio mattis in. Quisque dapibus aliquet dictum. Integer dapibus ullamcorper est, ac .</p>
+			  <h3 class="mb-3"><?php echo $about_title; ?></h3>
+			  <p class="about-text"><?php the_content(); ?></p>
 			</div>
 			<!-- Personal Info -->
 			<div class="row">
 			  <div class="col-lg-6">
 				<ul class="list-unstyled personal-info">
-				  <li>Website : <small><a href="https://retrina.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6aba7afaa86a3bea7abb6aaa3e8a5a9ab">[email&#160;protected]</a></small>
+				  <li>Website : <small><a href="mailto:<?php echo $about_email; ?>" class="__cf_email__"><?php echo $about_email; ?></a></small>
 				  </li>
-				  <li>Phone : <small>+123 456 7890</small>
+				  <li>Phone : <small><?php echo $about_number;?></small>
 				  </li>
-				  <li>City : <small> New York, USA</small>
+				  <li>City : <small> <?php echo $about_address;?></small>
 				  </li>
 				</ul>
 			  </div>
 			  <div class="col-lg-6">
 				<ul class="list-unstyled personal-info">
-				  <li>Age : <small>30</small>
+				  <li>Age : <small><?php echo $about_age;?></small>
 				  </li>
-				  <li>Degree : <small>Master</small>
+				  <li>Degree : <small><?php echo $about_degree;?></small>
 				  </li>
-				  <li>Freelance : <small>Available</small>
+				  <li>Freelance : <small><?php echo $about_freelancing;?></small>
 				  </li>
 				</ul>
 			  </div>

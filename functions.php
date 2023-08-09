@@ -131,7 +131,7 @@ add_action('cmb2_admin_init', 'page_meta');
 function page_meta() {
       $cmb = new_cmb2_box(array(
           'id' => 'page',
-          'title' => __('More Info:', 'ugyen'),
+          'title' => __('About Section:', 'ugyen'),
           'object_types' => array('page'),
           'context' => 'normal',
           'priority' => 'high',
@@ -196,92 +196,173 @@ function page_meta() {
 		  ),
 	  'preview_size' => 'medium', 
   ) );
-      
-      $cmb->add_field(array(
-      'name' => 'Admission Starting Date',
-      'desc' => 'Select uas starting date.',
-      'id'   => 'uas_sdate',
-      'type' => 'text_date',
-      'date_format' => 'l, F j,  Y',
-      ));
-      
-      $cmb->add_field(array(
-      'name' => 'Admission ending date',
-      'desc' => 'Select uas ending date.',
-      'id'   => 'uas_edate',
-      'type' => 'text_date',
-      'date_format' => 'l, F j,  Y',
+
+  $cmb->add_field(array(
+  'name' => 'About Me Title',
+  'desc' => 'Add intro for about me.',
+  'id'   => 'about_title',
+  'type' => 'text',
+  ));
+
+  $cmb->add_field(array(
+  'name' => 'Email',
+  'desc' => 'Add email address.',
+  'id'   => 'about_email',
+  'type' => 'text',
+  ));
+
+  $cmb->add_field(array(
+  'name' => 'Phone',
+  'desc' => 'Add phone Number.',
+  'id'   => 'about_number',
+  'type' => 'text',
+  ));
+
+  $cmb->add_field(array(
+  'name' => 'Address',
+  'desc' => 'Add address.',
+  'id'   => 'about_address',
+  'type' => 'text',
+  ));
+
+  $cmb->add_field(array(
+  'name' => 'Age',
+  'desc' => 'Add age.',
+  'id'   => 'about_age',
+  'type' => 'text',
+  ));
+
+  $cmb->add_field(array(
+  'name' => 'Degree',
+  'desc' => 'Add degree.',
+  'id'   => 'about_degree',
+  'type' => 'text',
+  ));
+
+  $cmb->add_field(array(
+  'name' => 'Freelancing',
+  'desc' => 'Add freelancing availability.',
+  'id'   => 'about_freelancing',
+  'type' => 'text',
+  ));
+}
+
+add_action('cmb2_admin_init', 'page_services_meta');
+function page_services_meta() {
+      $cmb = new_cmb2_box(array(
+          'id' => 'page_services',
+          'title' => __('Services Section:', 'ugyen'),
+          'object_types' => array('page'),
+          'context' => 'normal',
+          'priority' => 'high',
+          'show_names' => true,
+          'closed' => false,
+
       ));
 
-      $cmb->add_field( array(
-        'name' => 'Add Video',
-        'desc' => 'Enter a youtube, twitter, or instagram URL.',
-        'id'   => 'uas_video',
-        'type' => 'oembed',
-    ) );
-   $API_KEY = get_theme_mod('google_map_api'); 
-    $cmb->add_field( array(
-      'name' => 'UAS Location',
-      'desc' => 'Drag the marker to set the exact location',
-      'id' => 'uas_location',
-      'type' => 'pw_map',
-      'split_values' => true, 
-      'api_key' => $API_KEY, 
-    ) )
-    ;$cmb->add_field( [
-      'name' => __( 'Facebook Page Link', 'ugyen' ),
-      'desc' => __( 'Add link of facebook page..', 'ugyen' ),
-      'id' => 'uas_facebook',
+      $cmb->add_field(array(
+      'name' => 'Post Title',
+      'desc' => 'Add the title of profession.',
+      'id'   => 'position_title',
       'type' => 'text',
-      ],
-    );
-    ;$cmb->add_field( [
-      'name' => __( 'Twitter Page Link', 'ugyen' ),
-      'desc' => __( 'Add link of Twitter page..', 'ugyen' ),
-      'id' => 'uas_twitter',
-      'type' => 'text',
-      ],
-    );
-    ;$cmb->add_field( [
-      'name' => __( 'Youtube Page Link', 'ugyen' ),
-      'desc' => __( 'Add link of Youtube page..', 'ugyen' ),
-      'id' => 'uas_youtube',
-      'type' => 'text',
-      ],
-    );
-    ;$cmb->add_field( [
-      'name' => __( 'Instagram Page Link', 'ugyen' ),
-      'desc' => __( 'Add link of Instagram page..', 'ugyen' ),
-      'id' => 'uas_instagram',
-      'type' => 'text',
-      ],
-    );
-    ;$cmb->add_field( [
-      'name' => __( 'Linkedin Page Link', 'ugyen' ),
-      'desc' => __( 'Add link of Linkedin page..', 'ugyen' ),
-      'id' => 'uas_linkedin',
-      'type' => 'text',
-      ],
-    );
-    ;$cmb->add_field( [
-      'name' => __( 'Official Email', 'ugyen' ),
-      'desc' => __( 'Email address of University', 'ugyen' ),
-      'id' => 'uas_email',
-      'type' => 'text',
-      ],
-    );
-    ;$cmb->add_field( [
-      'name' => __( 'Contact Number', 'ugyen' ),
-      'desc' => __( 'Contact number of University', 'ugyen' ),
-      'id' => 'uas_phone',
-      'type' => 'text',
-      ],
-    );
-    ;$cmb->add_field( [
-      'name' => __( 'Website Url', 'ugyen' ),
-      'desc' => __( 'Add website or university.', 'ugyen' ),
-      'id' => 'uas_website',
-      'type' => 'text',
-      ],
-    );
+      ));
+
+      $cmb->add_field(array(
+      'name' => 'Intro',
+      'desc' => 'Add self intro.',
+      'id'   => 'intro_part',
+      'type' => 'textarea_code',
+      ));
+          
+      ;$cmb->add_field( array(
+        'name'    => 'Profile Banner',
+        'desc'    => 'Add image to show on intro part.',
+        'id'      => 'intro_banner',
+		'type'    => 'file',
+		'options' => array(
+			'url' => false, 
+		),
+		    'text'    => array(
+			'add_upload_file_text' => 'Add Banner' 
+			),
+			'query_args' => array(
+					'type' => array(
+						'image/gif',
+						'image/jpeg',
+						'image/png',
+					),
+			),
+		'preview_size' => 'medium', 
+	) );
+          
+	;$cmb->add_field( array(
+	  'name'    => 'CV',
+	  'desc'    => 'Add CV.',
+	  'id'      => 'intro_cv',
+	  'type'    => 'file',
+	  'options' => array(
+		  'url' => false, 
+	  ),
+		  'text'    => array(
+		  'add_upload_file_text' => 'Add cv' 
+		  ),
+		  'query_args' => array(
+				  'type' => array(
+					  'image/gif',
+					  'image/jpeg',
+					  'image/png',
+					  'application/pdf',
+				  ),
+		  ),
+	  'preview_size' => 'medium', 
+  ) );
+
+  $cmb->add_field(array(
+  'name' => 'About Me Title',
+  'desc' => 'Add intro for about me.',
+  'id'   => 'about_title',
+  'type' => 'text',
+  ));
+
+  $cmb->add_field(array(
+  'name' => 'Email',
+  'desc' => 'Add email address.',
+  'id'   => 'about_email',
+  'type' => 'text',
+  ));
+
+  $cmb->add_field(array(
+  'name' => 'Phone',
+  'desc' => 'Add phone Number.',
+  'id'   => 'about_number',
+  'type' => 'text',
+  ));
+
+  $cmb->add_field(array(
+  'name' => 'Address',
+  'desc' => 'Add address.',
+  'id'   => 'about_address',
+  'type' => 'text',
+  ));
+
+  $cmb->add_field(array(
+  'name' => 'Age',
+  'desc' => 'Add age.',
+  'id'   => 'about_age',
+  'type' => 'text',
+  ));
+
+  $cmb->add_field(array(
+  'name' => 'Degree',
+  'desc' => 'Add degree.',
+  'id'   => 'about_degree',
+  'type' => 'text',
+  ));
+
+  $cmb->add_field(array(
+  'name' => 'Freelancing',
+  'desc' => 'Add freelancing availability.',
+  'id'   => 'about_freelancing',
+  'type' => 'text',
+  ));
 }

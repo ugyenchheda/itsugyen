@@ -1,6 +1,6 @@
 /*------------------------- GENERAL -------------------------*/
 body {
-  background-color: #e5e7ed;
+  background-color: #d4e5f9;
 }
 .base-color {
   color: #23c1f7;
@@ -40,13 +40,13 @@ body {
 }
 /*------------------------- Preloader -------------------------*/
 #line-loader:before, #line-loader:after{
-  background-color: #e5e7ed;
+  background-color: #d4e5f9;
 }
 .middle-line:before{
   background-color: #000;
 }
 .middle-line:after{
-  background-color: #bbb;
+  background-color: #d4e5f9;
 }
 /*------------------------- OVERLAY MENU -------------------------*/
 a.menu-arrow {

@@ -12,10 +12,10 @@ jQuery(document).ready(function() {
         date();
         mobileDesign();
         sidebarMenu();
-        mapInit();
-        mouseMagicCursor();
-        ColorPallet();
-        themeOption();
+        //mapInit();
+        //mouseMagicCursor();
+        //ColorPallet();
+        //themeOption();
     });
 
     $window.on("load", function() {
