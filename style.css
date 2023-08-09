@@ -494,32 +494,32 @@ body {
     left: 50%;
     transform: translate(-50% , -50%);
   }
-  /*------------------------- Hero -------------------------*/
-  .hero {
+  /*------------------------- ugyen -------------------------*/
+  .ugyen {
     position: relative;
     z-index: 1;
     overflow: none;
   }
-  .hero .hero-center {
+  .ugyen .ugyen-center {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
   }
-  .hero-content {
+  .ugyen-content {
     max-width: 450px;
     line-height: 1.618;
   }
-  .hero .mCSB_container {
+  .ugyen .mCSB_container {
     overflow: initial;
   }
-  .hero-image img{
+  .ugyen-image img{
     display: inline-block;
     width: 250px;
     height: auto;
     border-radius: 50%;
   }
-  .hero-footer {
+  .ugyen-footer {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -528,7 +528,7 @@ body {
     text-align: center;
     transform: translateX(-50%);
   }
-  .hero-footer .primary-button {
+  .ugyen-footer .primary-button {
     border-radius: 20px;
     display: inline-block;
     font-size: 16px;
@@ -539,8 +539,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     right:2rem;
-    height: 300px;
-    width: 300px;
+    height: 400px;
   }
   /*------------------------- About -------------------------*/
   .about-img{
@@ -1459,7 +1458,7 @@ body {
     transform: translateZ(0);
     visibility: hidden;
   }
-  .mmc-inner {
+  .ucl-inner {
     margin-left: -3px;
     margin-top: -3px;
     width: 6px;
@@ -1469,7 +1468,7 @@ body {
     -webkit-transition: width .3s ease-in-out, height .3s ease-in-out, margin .3s ease-in-out, opacity .3s ease-in-out;
     transition: width .3s ease-in-out, height .3s ease-in-out, margin .3s ease-in-out, opacity .3s ease-in-out;
   }
-  .mmc-inner.mmc-hover {
+  .ucl-inner.ucl-hover {
     margin-left: -40px;
     margin-top: -40px;
     width: 80px;
@@ -1477,7 +1476,7 @@ body {
     background-color: #ff451b;
     opacity: .3;
   }
-  .mmc-outer {
+  .ucl-outer {
     margin-left: -15px;
     margin-top: -15px;
     width: 30px;
@@ -1490,7 +1489,7 @@ body {
     -webkit-transition: all .08s ease-out;
     transition: all .08s ease-out;
   }
-  .mmc-outer.mmc-hover{
+  .ucl-outer.ucl-hover{
     opacity: 0;
   }
   
@@ -1700,6 +1699,27 @@ body {
     font-size: 24px;
   }
   
+  .typing-demo {
+    width: 39ch;
+    animation: typing 5s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    font-size: 15px;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+  
   /*------------------------- Media -------------------------*/
   @media (min-width: 1440px) {
     #main>section:not(:first-child):not(:last-child) {
@@ -1744,6 +1764,17 @@ body {
       -webkit-backdrop-filter: blur(35px);
       border: none !important;
    }
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
     #main>section:not(:first-child):not(:last-child) {
       width: 100%;
    }
@@ -1794,7 +1825,7 @@ body {
       overflow-y: hidden;
       border-radius: 16px;
    }
-    .hero .hero-center {
+    .ugyen .ugyen-center {
       top: 3%;
       transform: translateY(0);
    }
@@ -1963,16 +1994,16 @@ body {
   }
   
   @media (max-height: 620px) {
-    .hero-image img{
+    .ugyen-image img{
       width: 200px;
     }
-    .hero-content h2{
+    .ugyen-content h2{
       font-size: 24px;
     }
-    .hero-footer .download-cv{
+    .ugyen-footer .download-cv{
       margin-bottom: 1rem !important;
     }
-    .hero-footer .social{
+    .ugyen-footer .social{
       margin-bottom: 0.5rem !important;
     }
   }
@@ -1991,10 +2022,10 @@ body {
     }
   }
   @media (max-height: 560px) {
-    #main>section#hero{
+    #main>section#ugyen{
      padding-bottom: 0 !important;
     }
-    .hero-footer{
+    .ugyen-footer{
       position: unset !important;
       transform: inherit !important;
       margin-top:0.5rem;

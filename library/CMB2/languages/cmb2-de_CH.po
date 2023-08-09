@@ -112,7 +112,7 @@ msgstr "Test Textbereich Klein"
 
 #: example-functions.php:273
 msgid "Test Text Area for Code"
-msgstr "Test Textbereich für die Programmcode Eingabe"
+msgstr "Test Textbereich für die Prograuclode Eingabe"
 
 #: example-functions.php:280
 msgid "Test Title Weeeee"

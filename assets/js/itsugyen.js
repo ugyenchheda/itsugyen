@@ -162,7 +162,7 @@ jQuery(document).ready(function() {
         if($window.width()>991){
             $.mCustomScrollbar.defaults.scrollButtons.enable = true;
             $.mCustomScrollbar.defaults.axis = "y";
-            $(".section").not('.hero').mCustomScrollbar({
+            $(".section").not('.ugyen').mCustomScrollbar({
                 theme: "light",
                 callbacks: {
                     whileScrolling: function() {
@@ -865,8 +865,8 @@ jQuery(document).ready(function() {
         var mouseCursor = $(".m-magic-cursor");
         if (mouseCursor.length && $window.width()>991) {
             if ($("body")) {
-                const e = document.querySelector(".mmc-inner"),
-                    t = document.querySelector(".mmc-outer");
+                const e = document.querySelector(".ucl-inner"),
+                    t = document.querySelector(".ucl-outer");
                 let n,
                     i = 0,
                     o = !1;
@@ -878,10 +878,10 @@ jQuery(document).ready(function() {
                     }
                 }),
                 $("body").on("mouseenter", "a, .cursor-pointer, button", function () {
-                    e.classList.add("mmc-hover"), t.classList.add("mmc-hover");
+                    e.classList.add("ucl-hover"), t.classList.add("ucl-hover");
                 }),
                 $("body").on("mouseleave", "a, .cursor-pointer, button", function () {
-                    ($(this).is("a") && $(this).closest(".cursor-pointer").length) || (e.classList.remove("mmc-hover"), t.classList.remove("mmc-hover"));
+                    ($(this).is("a") && $(this).closest(".cursor-pointer").length) || (e.classList.remove("ucl-hover"), t.classList.remove("ucl-hover"));
                 }),
                 (e.style.visibility = "visible"),
                 (t.style.visibility = "visible");

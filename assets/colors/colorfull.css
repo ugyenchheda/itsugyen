@@ -457,10 +457,10 @@ header, .right-side {
 }
 
 /*------------------------- Mouse Magic Cursor -------------------------*/
-.mmc-inner, .mmc-inner.mmc-hover{
+.ucl-inner, .ucl-inner.ucl-hover{
   background-color: #23c1f7;
 }
-.mmc-outer {
+.ucl-outer {
   border: 2px solid #23c1f7;
 }
 

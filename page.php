@@ -3,6 +3,9 @@
 
 get_header();
 $position_title = get_post_meta( get_the_ID(), 'position_title', true );
+$intro_part = get_post_meta( get_the_ID(), 'intro_part', true );
+$intro_banner = get_post_meta( get_the_ID(), 'intro_banner', true);
+$intro_cv = get_post_meta( get_the_ID(), 'intro_cv', true);
 ?>
 
 
@@ -52,7 +55,7 @@ $position_title = get_post_meta( get_the_ID(), 'position_title', true );
 	  <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'full'); ?>" alt="/">
 	</div>
 	<h1 class="mt-1"><?php the_title(); ?></h1>
-	<a class="download-cv primary-button d-none d-lg-inline-block" href="javascript:void(0);">Download CV</a>
+	<a class="download-cv primary-button d-none d-lg-inline-block" href="<?php echo $intro_cv;?>;" target="_blank">Download CV</a>
 	<div class="container d-lg-none d-inline-block">
 	  <div class="row">
 		<div class="col-12 text-center">
@@ -64,7 +67,7 @@ $position_title = get_post_meta( get_the_ID(), 'position_title', true );
   <div class="menu-align">
 	<ul class="list-group menu text-center " id="menu">
 	  <li class="list-group-item">
-		<a href="#hero">
+		<a href="#ugyen">
 		  <i class="bi bi-house"></i>
 		  <span>home</span>
 		</a>
@@ -121,25 +124,26 @@ $position_title = get_post_meta( get_the_ID(), 'position_title', true );
 <!--  Main Start  -->
 <main id="main" class="main-2">
 
-  <!--  Hero Start  -->
-  <section id="hero" class="section hero w-100">
-	<img class="extend-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/responsive.png" alt="/">
-	<div class="hero-center">
+  <!--  ugyen Start  -->
+  <section id="ugyen" class="section ugyen w-100">
+	<img class="extend-icon" src="<?php echo $intro_banner; ?>" alt="Ugyen Lama Banner Image">
+	<div class="ugyen-center">
 	  <div class="container">
 		<div class="row">
 		  <div class="col-lg-12 text-center text-lg-start">
-			<div class="hero-image d-inline-block d-lg-none">
+			<div class="ugyen-image d-inline-block d-lg-none">
 			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/profile-img.jpg" alt="/">
 			</div>
-			<div class="hero-content mt-4 mx-auto mx-lg-0 text-lg-left mt-lg-none">
+			<div class="ugyen-content mt-4 mx-auto mx-lg-0 text-lg-left mt-lg-none">
 			  <p class="base-color"><?php echo $position_title;  ?></p>
-			  <h2>Hello , I’m <span class="base-color">Alex Martin </span>Welcome to my World. </h2>
+			  <h2><?php echo $intro_part; ?></h2>
+			  <div class="typing-demo"> Feel free to browse and know about my work...</div>
 			</div>
 		  </div>
 		</div>
 	  </div>
 	</div>
-	<div class="hero-footer d-block d-lg-none">
+	<div class="ugyen-footer d-block d-lg-none">
 	  <a class="download-cv primary-button mt-3 mb-4 d-lg-none" href="javascript:void(0);">Download CV</a>
 	  <div class="social d-lg-none mb-4 d-block">
 		<a href="javascript:void(0);" class="d-inline-block">
@@ -154,7 +158,7 @@ $position_title = get_post_meta( get_the_ID(), 'position_title', true );
 	  </div>
 	</div>
   </section>
-  <!--  Hero End  -->
+  <!--  ugyen End  -->
 
   <!--  About Start  -->
   <section id="about" class="section about">
@@ -1008,8 +1012,8 @@ $position_title = get_post_meta( get_the_ID(), 'position_title', true );
 </div>
 
 <!-- Mouase Magic Cursor Start -->
-<div class="m-magic-cursor mmc-outer"></div>
-  <div class="m-magic-cursor mmc-inner"></div>
+<div class="m-magic-cursor ucl-outer"></div>
+  <div class="m-magic-cursor ucl-inner"></div>
 <!-- Mouase Magic Cursor End -->
 
 

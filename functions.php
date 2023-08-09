@@ -146,6 +146,56 @@ function page_meta() {
       'id'   => 'position_title',
       'type' => 'text',
       ));
+
+      $cmb->add_field(array(
+      'name' => 'Intro',
+      'desc' => 'Add self intro.',
+      'id'   => 'intro_part',
+      'type' => 'textarea_code',
+      ));
+          
+      ;$cmb->add_field( array(
+        'name'    => 'Profile Banner',
+        'desc'    => 'Add image to show on intro part.',
+        'id'      => 'intro_banner',
+		'type'    => 'file',
+		'options' => array(
+			'url' => false, 
+		),
+		    'text'    => array(
+			'add_upload_file_text' => 'Add Banner' 
+			),
+			'query_args' => array(
+					'type' => array(
+						'image/gif',
+						'image/jpeg',
+						'image/png',
+					),
+			),
+		'preview_size' => 'medium', 
+	) );
+          
+	;$cmb->add_field( array(
+	  'name'    => 'CV',
+	  'desc'    => 'Add CV.',
+	  'id'      => 'intro_cv',
+	  'type'    => 'file',
+	  'options' => array(
+		  'url' => false, 
+	  ),
+		  'text'    => array(
+		  'add_upload_file_text' => 'Add cv' 
+		  ),
+		  'query_args' => array(
+				  'type' => array(
+					  'image/gif',
+					  'image/jpeg',
+					  'image/png',
+					  'application/pdf',
+				  ),
+		  ),
+	  'preview_size' => 'medium', 
+  ) );
       
       $cmb->add_field(array(
       'name' => 'Admission Starting Date',
@@ -162,36 +212,7 @@ function page_meta() {
       'type' => 'text_date',
       'date_format' => 'l, F j,  Y',
       ));
-          
-      ;$cmb->add_field( array(
-        'name'    => 'University Photos',
-        'desc'    => 'Add images to show on gallery.',
-        'id'      => 'uas_banner',
-        'type' => 'file_list',
-        'text' => array(
-            'add_upload_files_text' => 'Add or upload Files',
-            'remove_image_text' => 'Remove Image', 
-            'file_text' => 'Images', 
-            'file_download_text' => 'Download', 
-            'remove_text' => 'Remove', 
-        'options' => array(
-            'url' => false,
-        ),
-        'text'    => array(
-            'add_upload_file_text' => 'Add Image' 
-        ),
-        
-        'query_args' => array(
-            'type' => 'application/pdf', 
-            // 'type' => array(
-            //     'image/gif',
-            //     'image/jpeg',
-            //     'image/png',
-            // ),
-        ),
-        'preview_size' => 'large', 
-        )
-      ) );
+
       $cmb->add_field( array(
         'name' => 'Add Video',
         'desc' => 'Enter a youtube, twitter, or instagram URL.',
