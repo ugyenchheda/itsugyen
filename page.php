@@ -139,7 +139,7 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 		<div class="row">
 		  <div class="col-lg-12 text-center text-lg-start">
 			<div class="ugyen-image d-inline-block d-lg-none">
-			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/profile-img.jpg" alt="/">
+			  <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'full'); ?>" alt="/">
 			</div>
 			<div class="ugyen-content mt-4 mx-auto mx-lg-0 text-lg-left mt-lg-none">
 			  <p class="base-color"><i class="bi bi-code-slash"></i> <?php echo $position_title;  ?></p>
