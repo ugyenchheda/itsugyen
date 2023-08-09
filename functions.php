@@ -123,3 +123,144 @@ function itsugyen_main_scripts() {
 	wp_enqueue_script( 'itsugyen', get_template_directory_uri() . '/assets/js/itsugyen.js', array(), _S_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'itsugyen_main_scripts' );
+
+
+require_once __DIR__ . '/library/CMB2/init.php';
+
+add_action('cmb2_admin_init', 'page_meta');
+function page_meta() {
+      $cmb = new_cmb2_box(array(
+          'id' => 'page',
+          'title' => __('More Info:', 'ugyen'),
+          'object_types' => array('page'),
+          'context' => 'normal',
+          'priority' => 'high',
+          'show_names' => true,
+          'closed' => false,
+
+      ));
+
+      $cmb->add_field(array(
+      'name' => 'Post Title',
+      'desc' => 'Add the title of profession.',
+      'id'   => 'position_title',
+      'type' => 'text',
+      ));
+      
+      $cmb->add_field(array(
+      'name' => 'Admission Starting Date',
+      'desc' => 'Select uas starting date.',
+      'id'   => 'uas_sdate',
+      'type' => 'text_date',
+      'date_format' => 'l, F j,  Y',
+      ));
+      
+      $cmb->add_field(array(
+      'name' => 'Admission ending date',
+      'desc' => 'Select uas ending date.',
+      'id'   => 'uas_edate',
+      'type' => 'text_date',
+      'date_format' => 'l, F j,  Y',
+      ));
+          
+      ;$cmb->add_field( array(
+        'name'    => 'University Photos',
+        'desc'    => 'Add images to show on gallery.',
+        'id'      => 'uas_banner',
+        'type' => 'file_list',
+        'text' => array(
+            'add_upload_files_text' => 'Add or upload Files',
+            'remove_image_text' => 'Remove Image', 
+            'file_text' => 'Images', 
+            'file_download_text' => 'Download', 
+            'remove_text' => 'Remove', 
+        'options' => array(
+            'url' => false,
+        ),
+        'text'    => array(
+            'add_upload_file_text' => 'Add Image' 
+        ),
+        
+        'query_args' => array(
+            'type' => 'application/pdf', 
+            // 'type' => array(
+            //     'image/gif',
+            //     'image/jpeg',
+            //     'image/png',
+            // ),
+        ),
+        'preview_size' => 'large', 
+        )
+      ) );
+      $cmb->add_field( array(
+        'name' => 'Add Video',
+        'desc' => 'Enter a youtube, twitter, or instagram URL.',
+        'id'   => 'uas_video',
+        'type' => 'oembed',
+    ) );
+   $API_KEY = get_theme_mod('google_map_api'); 
+    $cmb->add_field( array(
+      'name' => 'UAS Location',
+      'desc' => 'Drag the marker to set the exact location',
+      'id' => 'uas_location',
+      'type' => 'pw_map',
+      'split_values' => true, 
+      'api_key' => $API_KEY, 
+    ) )
+    ;$cmb->add_field( [
+      'name' => __( 'Facebook Page Link', 'ugyen' ),
+      'desc' => __( 'Add link of facebook page..', 'ugyen' ),
+      'id' => 'uas_facebook',
+      'type' => 'text',
+      ],
+    );
+    ;$cmb->add_field( [
+      'name' => __( 'Twitter Page Link', 'ugyen' ),
+      'desc' => __( 'Add link of Twitter page..', 'ugyen' ),
+      'id' => 'uas_twitter',
+      'type' => 'text',
+      ],
+    );
+    ;$cmb->add_field( [
+      'name' => __( 'Youtube Page Link', 'ugyen' ),
+      'desc' => __( 'Add link of Youtube page..', 'ugyen' ),
+      'id' => 'uas_youtube',
+      'type' => 'text',
+      ],
+    );
+    ;$cmb->add_field( [
+      'name' => __( 'Instagram Page Link', 'ugyen' ),
+      'desc' => __( 'Add link of Instagram page..', 'ugyen' ),
+      'id' => 'uas_instagram',
+      'type' => 'text',
+      ],
+    );
+    ;$cmb->add_field( [
+      'name' => __( 'Linkedin Page Link', 'ugyen' ),
+      'desc' => __( 'Add link of Linkedin page..', 'ugyen' ),
+      'id' => 'uas_linkedin',
+      'type' => 'text',
+      ],
+    );
+    ;$cmb->add_field( [
+      'name' => __( 'Official Email', 'ugyen' ),
+      'desc' => __( 'Email address of University', 'ugyen' ),
+      'id' => 'uas_email',
+      'type' => 'text',
+      ],
+    );
+    ;$cmb->add_field( [
+      'name' => __( 'Contact Number', 'ugyen' ),
+      'desc' => __( 'Contact number of University', 'ugyen' ),
+      'id' => 'uas_phone',
+      'type' => 'text',
+      ],
+    );
+    ;$cmb->add_field( [
+      'name' => __( 'Website Url', 'ugyen' ),
+      'desc' => __( 'Add website or university.', 'ugyen' ),
+      'id' => 'uas_website',
+      'type' => 'text',
+      ],
+    );
+}

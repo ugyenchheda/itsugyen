@@ -2,6 +2,7 @@
 //** * Template Name: The Ugyen */
 
 get_header();
+$position_title = get_post_meta( get_the_ID(), 'position_title', true );
 ?>
 
 
@@ -48,14 +49,14 @@ get_header();
 <div class="left-side  nav-close">
   <div class="menu-content-align">
 	<div class="left-side-image">
-	  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/profile-img.jpg" alt="/">
+	  <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'full'); ?>" alt="/">
 	</div>
-	<h1 class="mt-1">Alex Martin</h1>
+	<h1 class="mt-1"><?php the_title(); ?></h1>
 	<a class="download-cv primary-button d-none d-lg-inline-block" href="javascript:void(0);">Download CV</a>
 	<div class="container d-lg-none d-inline-block">
 	  <div class="row">
 		<div class="col-12 text-center">
-		  <p class="text-muted mb-0">Web Designer</p>
+		  <p class="text-muted mb-0"><?php echo $position_title;?></p>
 		</div>
 	  </div>
 	</div>
@@ -131,7 +132,7 @@ get_header();
 			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/profile-img.jpg" alt="/">
 			</div>
 			<div class="hero-content mt-4 mx-auto mx-lg-0 text-lg-left mt-lg-none">
-			  <p class="base-color">WEB DESIGNER</p>
+			  <p class="base-color"><?php echo $position_title;  ?></p>
 			  <h2>Hello , I’m <span class="base-color">Alex Martin </span>Welcome to my World. </h2>
 			</div>
 		  </div>
@@ -163,7 +164,7 @@ get_header();
 		<div class="row">
 		  <div class="col-lg-5">
 			<div class="about-img">
-			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/about-img.jpg" alt="/">
+			  <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'post_image_xl'); ?>" alt="/">
 			  <div class="border-img"></div>
 			</div>
 		  </div>
