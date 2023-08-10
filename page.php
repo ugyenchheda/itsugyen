@@ -216,38 +216,32 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 	  <!--  Count up  -->
 	  <div id="count-up" class="count-up text-center box-border">
 		<div class="row">
-		  <!-- Item-01 -->
-		  <div class="col-6 col-lg-3 my-4 count-item">
-			<div class="count-icon">
-			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/prototype.png" alt="/">
-			</div>
-			<span class="timer count-number" data-from="0" data-to="286" data-speed="5000">0</span>
-			<p class="mb-0">Logo Design</p>
-		  </div>
-		  <!-- Item-02 -->
-		  <div class="col-6 col-lg-3 my-4 count-item">
-			<div class="count-icon">
-			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/ui-design.png" alt="/">
-			</div>
-			<span class="timer count-number" data-from="0" data-to="6549" data-speed="5000">0</span>
-			<p class="mb-0">Web Design</p>
-		  </div>
-		  <!-- Item-03 -->
-		  <div class="col-6 col-lg-3 my-4 count-item">
-			<div class="count-icon">
-			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/layer.png" alt="/">
-			</div>
-			<span class="timer count-number" data-from="0" data-to="793" data-speed="5000">0</span>
-			<p class="mb-0">Illustration</p>
-		  </div>
-		  <!-- Item-04 -->
-		  <div class="col-6 col-lg-3 my-4 count-item">
-			<div class="count-icon">
-			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/checked.png" alt="/">
-			</div>
-			<span class="timer count-number" data-from="0" data-to="286" data-speed="5000">0</span>
-			<p class="mb-0">Project Done</p>
-		  </div>
+		<?php 
+		$project_types = get_post_meta( get_the_ID(), 'project_type', true );
+		foreach ( (array) $project_types as $key => $project_type ) {
+			$project_type_name = $project_type_description = $project_type_image = $project_type_count = '';
+			if ( isset( $project_type['project_type_name'] ) ) {
+				$project_type_name = esc_html( $project_type['project_type_name'] );
+			}
+			if ( isset( $project_type['project_type_description'] ) ) {
+				$project_type_description = wpautop( $project_type['project_type_description'] );
+			}
+			if ( isset( $project_type['project_type_image'] ) ) {
+				$project_type_image = esc_html( $project_type['project_type_image']);
+			}
+			if ( isset( $project_type['project_type_count'] ) ) {
+				$project_type_count = esc_html( $project_type['project_type_count'] );
+			}
+			
+		
+			echo '
+			<div class="col-6 col-lg-3 my-4 count-item">
+			  <div class="count-icon"><img src="'.$project_type_image.' " alt="'.$project_type_name.'"></div>
+			  <span class="timer count-number" data-from="0" data-to="'.$project_type_count.'" data-speed="5000">0</span>
+			  <p class="mb-0">'.$project_type_name.'</p>
+			</div>';
+		}
+	  ?>
 		</div>
 	  </div>
 	  <!--  Skills  -->
