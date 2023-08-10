@@ -171,13 +171,16 @@ header, .right-side {
   color: #23c1f7;
 }
 .knowledge-item li:nth-child(2)::before {
-  color: #fbdd62;
+  color: #09cd79;
 }
 .knowledge-item li:nth-child(3)::before {
   color: #ff5380;
 }
 .knowledge-item li:nth-child(4)::before {
-  color: #23c1f7;
+  color: #f36200;
+}
+.knowledge-item li:nth-child(4)::before {
+  color: #6c757d;
 }
 /*------------------------- Language Skill -------------------------*/
 .language-skill h6 span {

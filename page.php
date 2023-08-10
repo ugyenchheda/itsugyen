@@ -265,10 +265,17 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 		  </div>
 		  <div class="col-lg-5">
 			<ul class="knowledge-item">
-			  <li>Graphics and animations</li>
-			  <li>Video Formality</li>
-			  <li>Short Animationsg</li>
-			  <li>Teaching Web Design</li>
+			<?php 
+			$knowledges = get_post_meta( get_the_ID(), 'knowledge', true );
+			foreach ( (array) $knowledges as $key => $knowledge ) {
+				$knowledge_name ='';
+				if ( isset( $knowledge['knowledge_name'] ) ) {
+					$knowledge_name = esc_html( $knowledge['knowledge_name'] );
+				}
+				echo '
+				<li>'.$knowledge_name.'</li>';
+				}
+				?>
 			</ul>
 		  </div>
 		</div>
@@ -276,7 +283,7 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 	  <!--  Skillbar  -->
 	  <div class="row mt-5 skills">
 		<div class="col-lg-6">
-		  <h3 class="subtitle">Design Skills</h3>
+		  <h3 class="subtitle">Overall Skills</h3>
 		  <div id="skills">
 		  <?php 
 			$skills_types = get_post_meta( get_the_ID(), 'skills', true );
@@ -295,7 +302,7 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 				<div class="skillbar-title">'.$skills_name.'</div>
 				<div class="skill-bar-percent"><span data-from="0" data-to="'.$skills_count.'" data-speed="4000">'.$skills_count.'</span>%</div>
 				</div>
-				<div class="skillbar clearfix" data-percent="'.$skills_count.'">
+				<div class="skillbar clearfix" data-percent="'.$skills_count.'%">
 				<div class="skillbar-bar"></div>
 				</div>
 			</div>';

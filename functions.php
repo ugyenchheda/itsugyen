@@ -449,4 +449,27 @@ function page_about_meta() {
 			'id'   => 'skills_count',
 			'type' => 'text',
 		) );
+	
+
+		$group_field_id = $cmb->add_field( array(
+			'name' => 'Add Knowledge Details',
+			'id'          => 'knowledge',
+			'type'        => 'group',
+			'description' => __( 'Add varieties of knowledge with their description and counts.', 'ugyen' ),
+			'options'     => array(
+				'group_title'       => __( 'knowledge Type {#}', 'ugyen' ), 
+				'add_button'        => __( 'Add Another knowledge Type', 'ugyen' ),
+				'remove_button'     => __( 'Remove knowledge Type', 'ugyen' ),
+				'sortable'          => true,
+				 'closed'         => true, 
+				'remove_confirm' => esc_html__( 'Are you sure you want to remove this knowledge type?', 'ugyen' ), 
+			),
+			) );
+		
+			$cmb->add_group_field( $group_field_id, array(
+				'name' => 'knowledge Type Title',
+				'id'   => 'knowledge_name',
+				'type' => 'text',
+				
+			) );
 }
