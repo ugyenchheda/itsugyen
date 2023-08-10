@@ -449,8 +449,6 @@ function page_about_meta() {
 			'id'   => 'skills_count',
 			'type' => 'text',
 		) );
-	
-
 		$group_field_id = $cmb->add_field( array(
 			'name' => 'Add Knowledge Details',
 			'id'          => 'knowledge',
@@ -465,11 +463,31 @@ function page_about_meta() {
 				'remove_confirm' => esc_html__( 'Are you sure you want to remove this knowledge type?', 'ugyen' ), 
 			),
 			) );
-		
 			$cmb->add_group_field( $group_field_id, array(
 				'name' => 'knowledge Type Title',
 				'id'   => 'knowledge_name',
 				'type' => 'text',
 				
 			) );
+}
+
+add_action('cmb2_admin_init', 'page_services_meta');
+function page_services_meta() {
+	$cmb = new_cmb2_box(array(
+		'id' => 'page_service',
+		'title' => __('Services Section:', 'ugyen'),
+		'object_types' => array('page'),
+		'context' => 'normal',
+		'priority' => 'high',
+		'show_names' => true,
+		'closed' => false,
+
+	));
+
+	$cmb->add_field(array(
+	'name' => 'Post Title',
+	'desc' => 'Add the title of profession.',
+	'id'   => 'position_title',
+	'type' => 'text',
+	));
 }
