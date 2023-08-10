@@ -137,18 +137,34 @@ header, .right-side {
 }
 .skills .skill-box:nth-child(2) .skillbar {
   background-color: #fff;
-  border: 1px solid #fbdd62;
+  border: 1px solid #09cd79;
 }
 .skills .skill-box:nth-child(2) .skillbar-bar  {
-  background-color: #fbdd62;
+  background-color: #09cd79;
   border: 2px solid #fff;
 }
 .skills .skill-box:nth-child(3) .skillbar {
   background-color: #fff;
-  border: 1px solid #ff5380;
+  border: 1px solid #fd10a1;
 }
 .skills .skill-box:nth-child(3) .skillbar-bar  {
-  background-color: #ff5380;
+  background-color: #fd10a1;
+  border: 2px solid #fff;
+}
+.skills .skill-box:nth-child(4) .skillbar {
+  background-color: #fff;
+  border: 1px solid #f36200;
+}
+.skills .skill-box:nth-child(4) .skillbar-bar  {
+  background-color: #f36200;
+  border: 2px solid #fff;
+}
+.skills .skill-box:nth-child(5) .skillbar {
+  background-color: #fff;
+  border: 1px solid #6c757d;
+}
+.skills .skill-box:nth-child(5) .skillbar-bar  {
+  background-color: #6c757d;
   border: 2px solid #fff;
 }
 .knowledge-item li:nth-child(1)::before {

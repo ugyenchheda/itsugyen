@@ -278,40 +278,33 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 		<div class="col-lg-6">
 		  <h3 class="subtitle">Design Skills</h3>
 		  <div id="skills">
-			<!-- Item 01 -->
-			<div class="col-lg-12 skill-box">
-			  <div class="skill-text">
-				<div class="skillbar-title">Logo Design</div>
-				<div class="skill-bar-percent"><span data-from="0" data-to="100" data-speed="4000">100</span>%</div>
-			  </div>
-			  <div class="skillbar clearfix" data-percent="100%">
+		  <?php 
+			$skills_types = get_post_meta( get_the_ID(), 'skills', true );
+			foreach ( (array) $skills_types as $key => $skill_type ) {
+				$skills_name  = $skills_count = '';
+				if ( isset( $skill_type['skills_name'] ) ) {
+					$skills_name = esc_html( $skill_type['skills_name'] );
+				}
+				if ( isset( $skill_type['skills_count'] ) ) {
+					$skills_count = esc_html( $skill_type['skills_count'] );
+				}
+				
+			
+				echo '<div class="col-lg-12 skill-box">
+				<div class="skill-text">
+				<div class="skillbar-title">'.$skills_name.'</div>
+				<div class="skill-bar-percent"><span data-from="0" data-to="'.$skills_count.'" data-speed="4000">'.$skills_count.'</span>%</div>
+				</div>
+				<div class="skillbar clearfix" data-percent="'.$skills_count.'">
 				<div class="skillbar-bar"></div>
-			  </div>
-			</div>
-			<!-- Item 02 -->
-			<div class="col-lg-12 skill-box">
-			  <div class="skill-text">
-				<div class="skillbar-title">Web Design</div>
-				<div class="skill-bar-percent"><span data-from="0" data-to="95" data-speed="4000">95</span>%</div>
-			  </div>
-			  <div class="skillbar clearfix" data-percent="95%">
-				<div class="skillbar-bar"></div>
-			  </div>
-			</div>
-			<!-- Item 03 -->
-			<div class="col-lg-12 skill-box">
-			  <div class="skill-text">
-				<div class="skillbar-title">Illustration</div>
-				<div class="skill-bar-percent"><span data-from="0" data-to="85" data-speed="4000">85</span>%</div>
-			  </div>
-			  <div class="skillbar clearfix" data-percent="85%">
-				<div class="skillbar-bar"></div>
-			  </div>
-			</div>
+				</div>
+			</div>';
+			}
+			?>
 		  </div>
 		</div>
 		<div class="col-lg-5 ms-auto mt-5 mt-lg-0">
-		<h3 class="subtitle">My clients</h3>
+		<h3 class="subtitle">My Clients</h3>
 		<div class="testimonial mt-5">
 		<div class="owl-carousel">
 		  <!-- Item 01 -->

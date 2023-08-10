@@ -420,4 +420,33 @@ function page_about_meta() {
 	'id'   => 'skills_desc',
 	'type' => 'textarea_small',
 	));
+	
+
+	$group_field_id = $cmb->add_field( array(
+		'name' => 'Add skill Details',
+		'id'          => 'skills',
+		'type'        => 'group',
+		'description' => __( 'Add varieties of skills with their description and counts.', 'ugyen' ),
+		'options'     => array(
+			'group_title'       => __( 'Skills Type {#}', 'ugyen' ), 
+			'add_button'        => __( 'Add Another Skills Type', 'ugyen' ),
+			'remove_button'     => __( 'Remove Skills Type', 'ugyen' ),
+			'sortable'          => true,
+			 'closed'         => true, 
+			'remove_confirm' => esc_html__( 'Are you sure you want to remove this Skills type?', 'ugyen' ), 
+		),
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Skills Type Title',
+			'id'   => 'skills_name',
+			'type' => 'text',
+			
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Skills Type Count',
+			'id'   => 'skills_count',
+			'type' => 'text',
+		) );
 }
