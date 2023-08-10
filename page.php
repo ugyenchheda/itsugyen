@@ -248,9 +248,19 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 	  <div class="skills">
 		<div class="row pt-5">
 		  <div class="col-lg-7">
+			<?php
+				$skills_intro = get_post_meta( get_the_ID(), 'skills_intro', true );
+				$skills_desc = get_post_meta( get_the_ID(), 'skills_desc', true );
+			?>
 			<div class="skill-description">
-			  <h3 class="mb-3">I have been able to experience & developing this type of skill.</h3>
-			  <p class="mb-0">I was doing everything in my power to provide me with all the experiences to provide cost-effective and high quality products to satisfy my customers all over the world</p>
+				<?php if($skills_intro) {
+					echo '<h3 class="mb-3">'.$skills_intro.'</h3>';
+				}
+				if($skills_desc) {
+				echo '<p class="mb-0">'.$skills_desc.'</p>';
+				}
+				?>
+			  
 			</div>
 		  </div>
 		  <div class="col-lg-5">

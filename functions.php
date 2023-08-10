@@ -406,4 +406,18 @@ function page_about_meta() {
 		'id'   => 'project_type_count',
 		'type' => 'text',
 	) );
+
+	$cmb->add_field(array(
+	'name' => 'Skills Intro',
+	'desc' => 'Add a sentence about skills.',
+	'id'   => 'skills_intro',
+	'type' => 'text',
+	));
+  
+	$cmb->add_field(array(
+	'name' => 'Share Experience',
+	'desc' => 'Add description about skills and experience.',
+	'id'   => 'skills_desc',
+	'type' => 'textarea_small',
+	));
 }
