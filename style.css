@@ -726,8 +726,8 @@ body {
     cursor: grab;
   }
   .testimonial .testimonial-comment {
-    font-size: 22px;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: 400;
     font-style: italic;
     text-align: center;
     margin-bottom: 24px;
@@ -1657,7 +1657,9 @@ body {
     border: none;
     box-shadow: inset 3px 3px 3px #dadada, inset -3px -3px 3px #fafafa;
   }
-  
+  .testimonial-image img {
+    max-height: 49px;
+}
   .theme-skin li a {
     display: block;
     padding: 8px 0;

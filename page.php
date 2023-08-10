@@ -311,124 +311,8 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 		  </div>
 		</div>
 		<div class="col-lg-5 ms-auto mt-5 mt-lg-0">
-		  <h3 class="subtitle">Language</h3>
-		  <div class="language-bar">
-			<!-- Item 01 -->
-			<div class="language-skill">
-			  <h6 class="mb-0">English <span> Fluent</span>
-			  </h6>
-			  <ul class="list-inline text-right">
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-half"></i>
-				</li>
-			  </ul>
-			</div>
-			<!-- Item 02 -->
-			<div class="language-skill">
-			  <h6 class="mb-0">Germany <span>Basic</span>
-			  </h6>
-			  <ul class="list-inline text-right">
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle"></i>
-				</li>
-			  </ul>
-			</div>
-			<!-- Item 03 -->
-			<div class="language-skill">
-			  <h6 class="mb-0">Turkey <span>Basic</span>
-			  </h6>
-			  <ul class="list-inline text-right">
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle-fill"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle"></i>
-				</li>
-				<li class="list-inline-item">
-				  <i class="bi bi-circle"></i>
-				</li>
-			  </ul>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	  <!--  Client  -->
-	  <div class="testimonial mt-5">
+		<h3 class="subtitle">My clients</h3>
+		<div class="testimonial mt-5">
 		<div class="owl-carousel">
 		  <!-- Item 01 -->
 		  <div class="testimonial-box">
@@ -471,6 +355,9 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 		  </div>
 		</div>
 	  </div>
+		</div>
+	  </div>
+	  <!--  Client  -->
 	</div>
   </section>
   <!--  About End  -->
