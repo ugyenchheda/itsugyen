@@ -127,11 +127,11 @@ add_action( 'wp_enqueue_scripts', 'itsugyen_main_scripts' );
 
 require_once __DIR__ . '/library/CMB2/init.php';
 
-add_action('cmb2_admin_init', 'page_meta');
-function page_meta() {
+add_action('cmb2_admin_init', 'page_intro_meta');
+function page_intro_meta() {
       $cmb = new_cmb2_box(array(
           'id' => 'page',
-          'title' => __('About Section:', 'ugyen'),
+          'title' => __('Intro Section:', 'ugyen'),
           'object_types' => array('page'),
           'context' => 'normal',
           'priority' => 'high',
@@ -247,11 +247,11 @@ function page_meta() {
   ));
 }
 
-add_action('cmb2_admin_init', 'page_services_meta');
-function page_services_meta() {
+add_action('cmb2_admin_init', 'page_about_meta');
+function page_about_meta() {
       $cmb = new_cmb2_box(array(
-          'id' => 'page_services',
-          'title' => __('Services Section:', 'ugyen'),
+          'id' => 'page_about',
+          'title' => __('About Section:', 'ugyen'),
           'object_types' => array('page'),
           'context' => 'normal',
           'priority' => 'high',
@@ -364,5 +364,99 @@ function page_services_meta() {
   'desc' => 'Add freelancing availability.',
   'id'   => 'about_freelancing',
   'type' => 'text',
+  ));$cmb_group = new_cmb2_box(array(
+        'id' => 'uas_classes',
+        'title' => __('Courses', 'nepaleseinfinland'),
+        'object_types' => array('uas'),
+        'context' => 'normal',
+        'priority' => 'high',
+        'show_names' => true,
+        'closed' => false,
+
+    ));
+
+    $group_field_id = $cmb_group->add_field(array(
+      'id' => 'faculties',
+      'type' => 'group',
+      'options' => array(
+          'group_title' => esc_html__('Courses Conducting {#}', 'nepaleseinfinland'),
+          'add_button' => esc_html__('Add New Course', 'nepaleseinfinland'),
+          'remove_button' => esc_html__('Remove Courses', 'nepaleseinfinland'),
+          'sortable' => true,
+
+      ),
   ));
+
+  $cmb_group->add_group_field($group_field_id, array(
+      'name' => esc_html__('Course Name', 'nepaleseinfinland'),
+      'id' => 'course_name',
+      'type' => 'text',
+  ));
+
+  $cmb_group->add_group_field($group_field_id, array(
+      'name' => 'Course Inforamtion.',
+      'desc' => 'Add the description of courses here...',
+      'id' => 'course_desc',
+      'type' => 'wysiwyg',
+      'options' => array(
+          'wpautop' => true,
+          'media_buttons' => true,
+          'textarea_name' => 'course_desc',
+          'textarea_rows' => get_option('default_post_edit_rows', 10),
+          'tabindex' => '',
+          'editor_css' => '',
+          'editor_class' => '',
+          'teeny' => false,
+          'dfw' => false,
+          'tinymce' => true,
+          'quicktags' => true,
+      ),
+  ));
+
+  $cmb_group->add_group_field( $group_field_id, array(
+      'name' => 'Add Banner',
+      'id'   => 'faculty_banner',
+      'type' => 'file',
+  ) );
+
+  $group_field_id = $cmb->add_field( array(
+	'name' => 'Add Completed Project Details',
+    'id'          => 'project_type',
+    'type'        => 'group',
+    'description' => __( 'Add varieties of projects with their description and counts.', 'ugyen' ),
+    'options'     => array(
+        'group_title'       => __( 'Project Type {#}', 'ugyen' ), 
+        'add_button'        => __( 'Add Another Project Type', 'ugyen' ),
+        'remove_button'     => __( 'Remove Project Type', 'ugyen' ),
+        'sortable'          => true,
+         'closed'         => true, 
+        'remove_confirm' => esc_html__( 'Are you sure you want to remove this project type?', 'ugyen' ), 
+    ),
+) );
+
+$cmb->add_group_field( $group_field_id, array(
+    'name' => 'Project Type Title',
+    'id'   => 'project_type_name',
+    'type' => 'text',
+    
+) );
+
+$cmb->add_group_field( $group_field_id, array(
+    'name' => 'Description',
+    'description' => 'Write a short description for this Project Type',
+    'id'   => 'project_type_description',
+    'type' => 'textarea_small',
+) );
+
+$cmb->add_group_field( $group_field_id, array(
+    'name' => 'Project Type Image',
+    'id'   => 'image',
+    'type' => 'file',
+) );
+
+$cmb->add_group_field( $group_field_id, array(
+    'name' => 'Project Type Count',
+    'id'   => 'project_type_count',
+    'type' => 'text',
+) );
 }

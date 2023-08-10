@@ -188,7 +188,7 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 			<div class="row">
 			  <div class="col-lg-6">
 				<ul class="list-unstyled personal-info">
-				  <li>Website : <small><a href="mailto:<?php echo $about_email; ?>" class="__cf_email__"><?php echo $about_email; ?></a></small>
+				  <li>Email : <small><a href="mailto:<?php echo $about_email; ?>" class="__cf_email__"><?php echo $about_email; ?></a></small>
 				  </li>
 				  <li>Phone : <small><?php echo $about_number;?></small>
 				  </li>
