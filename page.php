@@ -389,10 +389,14 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 			
 		
 			echo '
-			<div class="col-6 col-lg-3 my-4 count-item">
-			  <div class="count-icon"><img src="'.$services_type_image.' " alt="'.$services_type_name.'"></div>
-			  <p class="mb-0">'.$services_type_name.'</p>
-			  <p class="mb-0">'.$services_type_description.'</p>
+			<div class="col-md-6">
+			  <div class="services-box">
+				<img src="'.$services_type_image.'" alt="/">
+				<div class="services-content">
+				  <h6 class="services-head">'.$services_type_name.'</h6>
+				  <p class="services-description mb-0">'.$services_type_description.'</p>
+				</div>
+			  </div>
 			</div>';
 		}
 	  ?>
