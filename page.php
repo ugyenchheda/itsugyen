@@ -368,8 +368,34 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 	  <!-- Servises -->
 	  <div class="services  mb-6">
 		<div class="boxes">
-		  <h3 class="subtitle">Services</h3>
+			<?php
+			$service_title = get_post_meta( get_the_ID(), 'service_title', true );
+			?>
+		  <h3 class="subtitle"><?php echo $service_title;?></h3>
 		  <div class="row vertical-line">
+		  <?php 
+		$services_types = get_post_meta( get_the_ID(), 'services_type', true );
+		foreach ( (array) $services_types as $key => $services_type ) {
+			$services_type_name = $services_type_description = $services_type_image = '';
+			if ( isset( $services_type['services_type_name'] ) ) {
+				$services_type_name = esc_html( $services_type['services_type_name'] );
+			}
+			if ( isset( $services_type['services_type_description'] ) ) {
+				$services_type_description = wpautop( $services_type['services_type_description'] );
+			}
+			if ( isset( $services_type['services_type_image'] ) ) {
+				$services_type_image = esc_html( $services_type['services_type_image']);
+			}
+			
+		
+			echo '
+			<div class="col-6 col-lg-3 my-4 count-item">
+			  <div class="count-icon"><img src="'.$services_type_image.' " alt="'.$services_type_name.'"></div>
+			  <p class="mb-0">'.$services_type_name.'</p>
+			  <p class="mb-0">'.$services_type_description.'</p>
+			</div>';
+		}
+	  ?>
 			<!-- Item 01 -->
 			<div class="col-md-6">
 			  <div class="services-box">

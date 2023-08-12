@@ -485,9 +485,47 @@ function page_services_meta() {
 	));
 
 	$cmb->add_field(array(
-	'name' => 'Post Title',
-	'desc' => 'Add the title of profession.',
-	'id'   => 'position_title',
+	'name' => 'Service Title',
+	'desc' => 'Add the title for service section.',
+	'id'   => 'service_title',
 	'type' => 'text',
 	));
+
+
+	$group_field_id = $cmb->add_field( array(
+		'name' => 'Add Completed Services Details',
+		'id'          => 'services_type',
+		'type'        => 'group',
+		'description' => __( 'Add varieties of Servicess with their description and counts.', 'ugyen' ),
+		'options'     => array(
+			'group_title'       => __( 'Services Type {#}', 'ugyen' ), 
+			'add_button'        => __( 'Add Another Services Type', 'ugyen' ),
+			'remove_button'     => __( 'Remove Services Type', 'ugyen' ),
+			'sortable'          => true,
+			 'closed'         => true, 
+			'remove_confirm' => esc_html__( 'Are you sure you want to remove this Services type?', 'ugyen' ), 
+		),
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Services Type Title',
+			'id'   => 'services_type_name',
+			'type' => 'text',
+			
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Description',
+			'description' => 'Write a short description for this Services Type',
+			'id'   => 'services_type_description',
+			'type' => 'textarea_small',
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Services Type Image',
+			'id'   => 'services_type_image',
+			'type' => 'file',
+		) );
+	
+	
 }
