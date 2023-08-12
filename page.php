@@ -975,19 +975,8 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 <!--  Background Shapes End  -->
 <!--  Color Pallet  -->
 <div id="color-switcher" class="color-switcher">
-  <div class="text-center color-pallet hide">
-	<h6 class="theme-skin-title">Light &amp; Dark</h6>
-	<ul class="color-scheme mb-0 list-inline">
-		<li class="list-inline-item">
-			<a href="javascript:void(0)" class="light-scheme"><i class="bi bi-brightness-high"></i> Light</a>
-		</li>
-		<li class="list-inline-item">
-			<a href="javascript:void(0)" class="dark-scheme active"><i class="bi bi-moon"></i> Dark</a>
-		</li>
-	  </ul>
-  </div>
   <div class="pallet-button hide">
-	  <a href="javascript:void(0)" class="cp-toggle"><i class="bi bi-gear"></i></a>
+	  <a><i class="bi bi-moon-stars"></i><i class="bi bi-sun d-none"></i></a>
   </div>
 </div>
 

@@ -918,8 +918,24 @@ jQuery(document).ready(function() {
         $("ul.pattern .color9").click(function () {
             return $("#option-color").attr("href", "assets/colors/red.css")
         });
-        $("#color-switcher .pallet-button").click(function () {
-            $("#color-switcher .color-pallet").toggleClass('show')
+        // $("#color-switcher .pallet-button").click(function () {
+        //     $("body").addClass('dark-arshia');
+        //     $('.color-scheme li a').removeClass('active');
+        //     $(this).addClass('active');
+        // })
+        $(".bi-moon-stars").click(function () {
+            $("body").addClass('dark-arshia');
+            $(".bi-moon-stars").addClass('d-none');
+            $(".bi-sun").removeClass('d-none');
+            $('.color-scheme li a').removeClass('active');
+            $(this).addClass('active');
+        })
+        $(".bi-sun").click(function () {
+            $("body").removeClass('dark-arshia');;
+            $('.color-scheme li a').addClass('active');
+            $(".bi-sun").addClass('d-none');
+            $(".bi-moon-stars").removeClass('d-none');
+            $(this).removeClass('active');
         })
         "use strict";
 
