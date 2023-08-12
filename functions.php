@@ -256,7 +256,7 @@ function page_about_meta() {
           'context' => 'normal',
           'priority' => 'high',
           'show_names' => true,
-          'closed' => false,
+          'closed' => true,
 
       ));
 
@@ -480,7 +480,7 @@ function page_services_meta() {
 		'context' => 'normal',
 		'priority' => 'high',
 		'show_names' => true,
-		'closed' => false,
+		'closed' => true,
 
 	));
 
@@ -528,7 +528,9 @@ function page_services_meta() {
 		) );
 	
 	
-}add_action('cmb2_admin_init', 'page_education_meta');
+}
+
+add_action('cmb2_admin_init', 'page_education_meta');
 function page_education_meta() {
 	$cmb = new_cmb2_box(array(
 		'id' => 'page_deucation',
@@ -537,7 +539,7 @@ function page_education_meta() {
 		'context' => 'normal',
 		'priority' => 'high',
 		'show_names' => true,
-		'closed' => false,
+		'closed' => true,
 
 	));
 
@@ -591,6 +593,76 @@ function page_education_meta() {
 			'id'   => 'education_type_description',
 			'type' => 'textarea_small',
 		) );
+}
+
+add_action('cmb2_admin_init', 'page_experience_meta');
+function page_experience_meta() {
+	$cmb = new_cmb2_box(array(
+		'id' => 'page_experience',
+		'title' => __('Experience Section:', 'ugyen'),
+		'object_types' => array('page'),
+		'context' => 'normal',
+		'priority' => 'high',
+		'show_names' => true,
+		'closed' => true,
+
+	));
+
+	$cmb->add_field(array(
+	'name' => 'Experience Block Title',
+	'desc' => 'Add the title for experience section.',
+	'id'   => 'experience_title',
+	'type' => 'text',
+	));
+
+
+	$group_field_id = $cmb->add_field( array(
+		'name' => 'Add Completed experience Details',
+		'id'          => 'experience_type',
+		'type'        => 'group',
+		'description' => __( 'Add varieties of experiences with their description and counts.', 'ugyen' ),
+		'options'     => array(
+			'group_title'       => __( 'Experiences {#}', 'ugyen' ), 
+			'add_button'        => __( 'Add Another Experience', 'ugyen' ),
+			'remove_button'     => __( 'Remove Experience', 'ugyen' ),
+			'sortable'          => true,
+			 'closed'         => true, 
+			'remove_confirm' => esc_html__( 'Are you sure you want to remove this experience?', 'ugyen' ), 
+		),
+		) );
 	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Position',
+			'id'   => 'experience_position',
+			'type' => 'text',
+			
+		) );
 	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Company',
+			'id'   => 'experience_institution',
+			'type' => 'text',
+			
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Company Website',
+			'id'   => 'institution_website',
+			'type' => 'text',
+			
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Time Period',
+			'id'   => 'experience_year',
+			'type' => 'text',
+			
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Description',
+			'description' => 'Write a short description for this experience Level',
+			'id'   => 'experience_description',
+			'type' => 'textarea_small',
+		) );
 }

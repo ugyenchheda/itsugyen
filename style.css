@@ -1709,7 +1709,12 @@ body {
     border-right: 2px solid;
     font-size: 15px;
   }
-  
+  p.timeline-title {
+    font-size: 13px;
+    font-style: italic;
+    margin-top: -10px;
+    margin-bottom: 7px;
+}
   @keyframes typing {
     from {
       width: 0

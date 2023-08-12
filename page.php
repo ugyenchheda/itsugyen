@@ -403,7 +403,7 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 			<!-- Item 01 -->
 			<div class="col-md-6">
 			  <div class="services-box">
-				<img src="'.$services_type_image.'" alt="/">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/prototype.png" alt="/">
 				<div class="services-content">
 				  <h6 class="services-head">Web Design</h6>
 				  <p class="services-description mb-0">In a professional context it often happens that private or corporate clients corder a publication to be made.</p>
@@ -530,24 +530,51 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 				</div>
 			  </div>
 			</div>
-			<!--  Item 04  -->
-			<div class="col-md-6">
-			  <div class="timeline-box">
-				<div class="time-line-header">
-				  <p class="timeline-year">2019 - 2021</p>
-				  <h6 class="timeline-title">Advetising Course - Canada</h6>
-				</div>
-				<div class="timeline-content">
-				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare.</p>
-				</div>
-			  </div>
-			</div>
 		  </div>
 		</div>
 		<!--  TimeLine Experience  -->
 		<div class="boxes mt-6 mb-3">
-		  <h3 class="subtitle">Experience</h3>
+		<?php
+			$experience_title = get_post_meta( get_the_ID(), 'experience_title', true );
+			?>
+		  <h3 class="subtitle"><?php echo $experience_title;?></h3>
 		  <div class="row vertical-line">
+		  <?php 
+		$experience_types = get_post_meta( get_the_ID(), 'experience_type', true );
+		foreach ( (array) $experience_types as $key => $experience_type ) {
+			$experience_position = $experience_institution = $experience_type_description = $education_year = $institution_website = '';
+			if ( isset( $experience_type['experience_position'] ) ) {
+				$experience_position = esc_html( $experience_type['experience_position'] );
+			}
+			if ( isset( $experience_type['experience_institution'] ) ) {
+				$experience_institution = esc_html( $experience_type['experience_institution'] );
+			}
+			if ( isset( $experience_type['experience_year'] ) ) {
+				$experience_year = esc_html( $experience_type['experience_year']);
+			}
+			if ( isset( $experience_type['experience_description'] ) ) {
+				$experience_type_description = esc_html( $experience_type['experience_description']);
+			}
+			if ( isset( $experience_type['institution_website'] ) ) {
+				$institution_website = esc_html( $experience_type['institution_website']);
+			}
+			
+		
+			echo '
+			<div class="col-md-6">
+			<div class="timeline-box">
+			  <div class="time-line-header">
+				<p class="timeline-year">'.$experience_year.'</p>
+				<h6 class="timeline-title">'.$experience_position.'</h6>
+				<p class="timeline-title">Company: <a href="'.$institution_website.'" target="_blank">'.$experience_institution.'</a></p>
+			  </div>
+			  <div class="timeline-content">
+				<p>'.$experience_type_description.'</p>
+			  </div>
+			</div>
+			</div>';
+		}
+	  ?>
 			<!--   Item 01   -->
 			<div class="col-md-6">
 			  <div class="timeline-box">
