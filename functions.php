@@ -528,4 +528,69 @@ function page_services_meta() {
 		) );
 	
 	
+}add_action('cmb2_admin_init', 'page_education_meta');
+function page_education_meta() {
+	$cmb = new_cmb2_box(array(
+		'id' => 'page_deucation',
+		'title' => __('Education Section:', 'ugyen'),
+		'object_types' => array('page'),
+		'context' => 'normal',
+		'priority' => 'high',
+		'show_names' => true,
+		'closed' => false,
+
+	));
+
+	$cmb->add_field(array(
+	'name' => 'Education Title',
+	'desc' => 'Add the title for education section.',
+	'id'   => 'education_title',
+	'type' => 'text',
+	));
+
+
+	$group_field_id = $cmb->add_field( array(
+		'name' => 'Add Completed education Details',
+		'id'          => 'education_type',
+		'type'        => 'group',
+		'description' => __( 'Add varieties of educations with their description and counts.', 'ugyen' ),
+		'options'     => array(
+			'group_title'       => __( 'Education Level {#}', 'ugyen' ), 
+			'add_button'        => __( 'Add Another Education Level', 'ugyen' ),
+			'remove_button'     => __( 'Remove Education Level', 'ugyen' ),
+			'sortable'          => true,
+			 'closed'         => true, 
+			'remove_confirm' => esc_html__( 'Are you sure you want to remove this Education Level?', 'ugyen' ), 
+		),
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Education Level Title',
+			'id'   => 'education_type_name',
+			'type' => 'text',
+			
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Education Level Title',
+			'id'   => 'education_institution',
+			'type' => 'text',
+			
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Education Year',
+			'id'   => 'education_year',
+			'type' => 'text',
+			
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Description',
+			'description' => 'Write a short description for this Education Level',
+			'id'   => 'education_type_description',
+			'type' => 'textarea_small',
+		) );
+	
+	
 }

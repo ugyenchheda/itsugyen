@@ -403,7 +403,7 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 			<!-- Item 01 -->
 			<div class="col-md-6">
 			  <div class="services-box">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/ui-design.png" alt="/">
+				<img src="'.$services_type_image.'" alt="/">
 				<div class="services-content">
 				  <h6 class="services-head">Web Design</h6>
 				  <p class="services-description mb-0">In a professional context it often happens that private or corporate clients corder a publication to be made.</p>
@@ -450,16 +450,6 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 				</div>
 			  </div>
 			</div>
-			<!-- Item 06 -->
-			<div class="col-md-6">
-			  <div class="services-box">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/console.png" alt="/">
-				<div class="services-content">
-				  <h6 class="services-head">Game Development</h6>
-				  <p class="services-description mb-0">In a professional context it often happens that private or corporate clients corder a publication to be made.</p>
-				</div>
-			  </div>
-			</div>
 		  </div>
 		</div>
 	  </div>
@@ -467,9 +457,44 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 	  <div class="resume">
 		<!--  TimeLine Education  -->
 		<div class="boxes my-6">
-		  <h3 class="subtitle">Education</h3>
+		<?php
+			$education_title = get_post_meta( get_the_ID(), 'education_title', true );
+			?>
+		  <h3 class="subtitle"><?php echo $education_title;?></h3>
 		  <div class="row vertical-line">
 			<!--  Item 01  -->
+		  <?php 
+		$education_types = get_post_meta( get_the_ID(), 'education_type', true );
+		foreach ( (array) $education_types as $key => $education_type ) {
+			$education_type_name = $education_institution = $education_type_description = $education_year = '';
+			if ( isset( $education_type['education_type_name'] ) ) {
+				$education_type_name = esc_html( $education_type['education_type_name'] );
+			}
+			if ( isset( $education_institution['education_institution'] ) ) {
+				$education_institution = wpautop( $education_type['education_institution'] );
+			}
+			if ( isset( $education_type['education_year'] ) ) {
+				$education_year = esc_html( $education_type['education_year']);
+			}
+			if ( isset( $education_type['education_type_description'] ) ) {
+				$education_type_description = esc_html( $education_type['education_type_description']);
+			}
+			
+		
+			echo '
+			<div class="col-md-6">
+			  <div class="timeline-box">
+				<div class="time-line-header">
+				  <p class="timeline-year">'.$education_year.'</p>
+				  <h6 class="timeline-title">'.$education_type_name.'</h6>
+				</div>
+				<div class="timeline-content">
+				  <p>'.$education_type_description.'</p>
+				</div>
+			  </div>
+			</div>';
+		}
+	  ?>
 			<div class="col-md-6">
 			  <div class="timeline-box">
 				<div class="time-line-header">
