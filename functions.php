@@ -666,3 +666,82 @@ function page_experience_meta() {
 			'type' => 'textarea_small',
 		) );
 }
+
+
+// Register Portfolio Post Type
+function portfolio_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Portfolios', 'Post Type General Name', 'ugyen' ),
+		'singular_name'         => _x( 'Portfolio', 'Post Type Singular Name', 'ugyen' ),
+		'menu_name'             => __( 'Portfolio', 'ugyen' ),
+		'name_admin_bar'        => __( 'Portfolio', 'ugyen' ),
+		'archives'              => __( 'Portfolio Archives', 'ugyen' ),
+		'attributes'            => __( 'Portfolio Attributes', 'ugyen' ),
+		'parent_item_colon'     => __( 'Parent Portfolio:', 'ugyen' ),
+		'all_items'             => __( 'All Portfolios', 'ugyen' ),
+		'add_new_item'          => __( 'Add New Portfolio', 'ugyen' ),
+		'add_new'               => __( 'Add Portfolio', 'ugyen' ),
+		'new_item'              => __( 'New Portfolio', 'ugyen' ),
+		'edit_item'             => __( 'Edit Portfolio', 'ugyen' ),
+		'update_item'           => __( 'Update Portfolio', 'ugyen' ),
+		'view_item'             => __( 'View Portfolio', 'ugyen' ),
+		'view_items'            => __( 'View Portfolios', 'ugyen' ),
+		'search_items'          => __( 'Search Portfolio', 'ugyen' ),
+		'not_found'             => __( 'Not found', 'ugyen' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'ugyen' ),
+		'featured_image'        => __( 'Featured Image', 'ugyen' ),
+		'set_featured_image'    => __( 'Set featured image', 'ugyen' ),
+		'remove_featured_image' => __( 'Remove featured image', 'ugyen' ),
+		'use_featured_image'    => __( 'Use as featured image', 'ugyen' ),
+		'insert_into_item'      => __( 'Insert into Portfolio', 'ugyen' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this Portfolio', 'ugyen' ),
+		'items_list'            => __( 'Portfolios list', 'ugyen' ),
+		'items_list_navigation' => __( 'Portfolios list navigation', 'ugyen' ),
+		'filter_items_list'     => __( 'Filter Portfolios list', 'ugyen' ),
+	);
+	$args = array(
+		'label'                 => __( 'Portfolio', 'ugyen' ),
+		'description'           => __( 'Works I Executed', 'ugyen' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail' ),
+		'taxonomies'            => array( 'category' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-star-filled',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'portfolio', $args );
+
+}
+add_action( 'init', 'portfolio_post_type', 0 );
+
+add_action('cmb2_admin_init', 'portfolio_meta');
+function portfolio_meta() {
+	$cmb = new_cmb2_box(array(
+		'id' => 'portfolio',
+		'title' => __('Info Section:', 'ugyen'),
+		'object_types' => array('portfolio'),
+		'context' => 'normal',
+		'priority' => 'high',
+		'show_names' => true,
+		'closed' => true,
+
+	));
+
+	$cmb->add_field(array(
+	'name' => 'Portfolio Link',
+	'desc' => 'Add link to portfolio.',
+	'id'   => 'portfolio_link',
+	'type' => 'text',
+	));
+}

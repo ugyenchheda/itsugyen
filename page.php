@@ -635,11 +635,31 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 	<div class="container">
 	  <div class="heading-meta-container">
 		<h2 class="heading-title">Portfolio</h2>
-		<h6 class="description">See My Ausome Work</h6>
+		<h6 class="description">Check Out My Works</h6>
 	  </div>
 	  <div class="row">
 		<!--   Portfolio Filters   -->
 		<ul id="portfolio-filter" class="list-inline col-lg-12 portfolio-filter text-center">
+		<?php
+$custom_post_type = 'portfolio';
+$taxonomies = get_object_taxonomies($custom_post_type, 'objects');
+$taxonomy_slug = 'portfolio';
+
+$terms = get_terms(array(
+    'taxonomy' => $taxonomy_slug,
+    'hide_empty' => false, // Set to true if you want to hide empty terms
+));
+
+if (!empty($terms)) {
+    echo '<ul>';
+    foreach ($terms as $term) {
+        echo '<li>' . $term->name . '</li>';
+    }
+    echo '</ul>';
+} else {
+    echo 'No terms found for this custom post type and taxonomy.';
+}
+?>
 		  <li class="list-inline-item">
 			<a href="javascript:void(0)" data-filter="*" class="active">All</a>
 		  </li>
