@@ -651,11 +651,9 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 				));
 
 				if (!empty($terms)) {
-				echo '<ul class="list-inline">';
 				foreach ($terms as $term) {
 					echo '<li class="list-inline-item"><a href="javascript:void(0)" data-filter=".' . $term->slug . '">' . $term->name . '</a></li>';
 				}
-				echo '</ul>';
 				} else {
 				echo 'No terms found for this custom post type and taxonomy.';
 				}
@@ -665,34 +663,41 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 	  <div class="portfolio-items border-line-v row">
 		<!-- Item 01 -->
 		
-		<?php
-			$custom_post_type = 'portfolio';
-			$terms = get_terms(array(
-			'taxonomy' => 'category',
-			'hide_empty' => true, 
-			));
+		<?php $args = array(
+    'post_type' => 'portfolio', 
+);
+$query = new WP_Query($args);
 
-			if (!empty($terms)) {
-				
-				$portfolio_link = get_post_meta( get_the_ID(), 'portfolio_link', true );
-				foreach ($terms as $term) {
-					echo '
-					<div class="col-md-6 col-lg-4 portfolio-item ' . $term->slug . '">
-						<div class="portfolio-box">
-						<div class="portfolio-image">'.get_the_post_thumbnail( get_the_ID(), 'medium', array( 'class' => 'alignleft' ) ).'
-							<div class="portfolio-icon">
-							<a href="'.$portfolio_link.'" class="mfp-iframe" target="_blank">
-								<i class="bi bi-music-note-beamed"></i>
-							</a>
-							</div>
-						</div>
-						<div class="portfolio-content">
-							<h6 class="blog-header">'.get_the_title().'</h6>
-						</div>
-						</div>
-					</div>';
-				}
-			}
+if ($query->have_posts()) {
+    while ($query->have_posts()) {
+        $query->the_post();
+        
+        $portfolio_link = get_post_meta( get_the_ID(), 'portfolio_link', true );
+
+        // Get the terms associated with the current post
+        $terms = get_the_terms(get_the_ID(), 'category');
+
+        if (!empty($terms)) {
+            foreach ($terms as $term) {
+                echo '<div class="col-md-6 col-lg-4 portfolio-item ' . $term->slug . '">
+                            <div class="portfolio-box">
+                                <div class="portfolio-image">' . get_the_post_thumbnail(get_the_ID(), 'post_image_xl', array('class' => 'alignleft')) . '
+                                    <div class="portfolio-icon">
+                                        <a href="' . $portfolio_link . '" class="mfp-iframe" target="_blank">
+                                            <i class="bi bi-link"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portfolio-content">
+                                    <h6 class="blog-header"><a href="' . $portfolio_link . '" class="mfp-iframe" target="_blank">' . get_the_title() . '</a></h6>
+                                </div>
+                            </div>
+                        </div>';
+            }
+        }
+    }
+}
+
 		?>
 	</div>
   </section>
