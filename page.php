@@ -640,141 +640,60 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 	  <div class="row">
 		<!--   Portfolio Filters   -->
 		<ul id="portfolio-filter" class="list-inline col-lg-12 portfolio-filter text-center">
-		<?php
-$custom_post_type = 'portfolio';
-$taxonomies = get_object_taxonomies($custom_post_type, 'objects');
-$taxonomy_slug = 'portfolio';
-
-$terms = get_terms(array(
-    'taxonomy' => $taxonomy_slug,
-    'hide_empty' => false, // Set to true if you want to hide empty terms
-));
-
-if (!empty($terms)) {
-    echo '<ul>';
-    foreach ($terms as $term) {
-        echo '<li>' . $term->name . '</li>';
-    }
-    echo '</ul>';
-} else {
-    echo 'No terms found for this custom post type and taxonomy.';
-}
-?>
 		  <li class="list-inline-item">
 			<a href="javascript:void(0)" data-filter="*" class="active">All</a>
 		  </li>
-		  <li class="list-inline-item">
-			<a href="javascript:void(0)" data-filter=".webdesign">Web Design</a>
-		  </li>
-		  <li class="list-inline-item">
-			<a href="javascript:void(0)" data-filter=".mobiledesign">Mobile Design</a>
-		  </li>
-		  <li class="list-inline-item">
-			<a href="javascript:void(0)" data-filter=".sound">Sound</a>
-		  </li>
-		  <li class="list-inline-item">
-			<a href="javascript:void(0)" data-filter=".graphic">Graphic</a>
-		  </li>
+			<?php
+				$custom_post_type = 'portfolio';
+				$terms = get_terms(array(
+				'taxonomy' => 'category',
+				'hide_empty' => true, 
+				));
+
+				if (!empty($terms)) {
+				echo '<ul class="list-inline">';
+				foreach ($terms as $term) {
+					echo '<li class="list-inline-item"><a href="javascript:void(0)" data-filter=".' . $term->slug . '">' . $term->name . '</a></li>';
+				}
+				echo '</ul>';
+				} else {
+				echo 'No terms found for this custom post type and taxonomy.';
+				}
+			?>
 		</ul>
 	  </div>
 	  <div class="portfolio-items border-line-v row">
 		<!-- Item 01 -->
-		<div class="col-md-6 col-lg-4 portfolio-item sound">
-		  <div class="portfolio-box">
-			<div class="portfolio-image">
-			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/portfolio-item1.jpg" alt="/">
-			  <div class="portfolio-icon">
-				<a href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/221650664&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true" class="portfolio-magnific mfp-iframe">
-				  <i class="bi bi-music-note-beamed"></i>
-				</a>
-			  </div>
-			</div>
-			<div class="portfolio-content">
-			  <h6 class="blog-header">Tak photo on the waves</h6>
-			  <p class="mb-0">image</p>
-			</div>
-		  </div>
-		</div>
-		<!-- Item 02 -->
-		<div class="col-md-6 col-lg-4 portfolio-item sound">
-		  <div class="portfolio-box">
-			<div class="portfolio-image">
-			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/portfolio-item2.jpg" alt="/">
-			  <div class="portfolio-icon">
-				<a href="https://player.vimeo.com/video/158284739" class="portfolio-magnific mfp-iframe">
-				  <i class="bi bi-camera-video"></i>
-				</a>
-			  </div>
-			</div>
-			<div class="portfolio-content">
-			  <h6 class="blog-header">Tak photo on the waves</h6>
-			  <p class="mb-0">image</p>
-			</div>
-		  </div>
-		</div>
-		<!-- Item 03 -->
-		<div class="col-md-6 col-lg-4 portfolio-item sound">
-		  <div class="portfolio-box">
-			<div class="portfolio-image">
-			  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/portfolio-item3.jpg" alt="/">
-			  <div class="portfolio-icon">
-				<a href="portfolio-01-colorfull.html" class="ajax-page-load">
-				  <i class="bi bi-file-earmark-text"></i>
-				</a>
-			  </div>
-			</div>
-			<div class="portfolio-content">
-			  <h6 class="blog-header">Tak photo on the waves</h6>
-			  <p class="mb-0">image</p>
-			</div>
-		  </div>
-		</div>
-		<!-- Item 04 -->
-		<div class="col-md-6 col-lg-4 portfolio-item mobiledesign webdesign">
-		  <div class="portfolio-image">
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/portfolio-item4.jpg" alt="/">
-			<div class="portfolio-icon">
-			  <a href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/221650664&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true" class="portfolio-magnific mfp-iframe">
-				<i class="bi bi-music-note-beamed"></i>
-			  </a>
-			</div>
-		  </div>
-		  <div class="portfolio-content">
-			<h6 class="blog-header">Detailed Project 2</h6>
-			<p class="mb-0">image</p>
-		  </div>
-		</div>
-		<!-- Item 05 -->
-		<div class="col-md-6 col-lg-4 portfolio-item mobiledesign sound">
-		  <div class="portfolio-image">
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/portfolio-item5.jpg" alt="/">
-			<div class="portfolio-icon">
-			  <a href="https://player.vimeo.com/video/158284739" class="portfolio-magnific mfp-iframe">
-				<i class="bi bi-camera-video"></i>
-			  </a>
-			</div>
-		  </div>
-		  <div class="portfolio-content">
-			<h6 class="blog-header">Detailed Project 2</h6>
-			<p class="mb-0">image</p>
-		  </div>
-		</div>
-		<!-- Item 06 -->
-		<div class="col-md-6 col-lg-4 portfolio-item mobiledesign">
-		  <div class="portfolio-image">
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/portfolio-item6.jpg" alt="/">
-			<div class="portfolio-icon">
-			  <a href="portfolio-01-colorfull.html" class="ajax-page-load">
-				<i class="bi bi-file-earmark-text"></i>
-			  </a>
-			</div>
-		  </div>
-		  <div class="portfolio-content">
-			<h6 class="blog-header">Detailed Project 2</h6>
-			<p class="mb-0">image</p>
-		  </div>
-		</div>
-	  </div>
+		
+		<?php
+				$custom_post_type = 'portfolio';
+				$terms = get_terms(array(
+				'taxonomy' => 'category',
+				'hide_empty' => true, 
+				));
+
+				if (!empty($terms)) {
+					
+					$portfolio_link = get_post_meta( get_the_ID(), 'portfolio_link', true );
+					foreach ($terms as $term) {
+						echo '
+						<div class="col-md-6 col-lg-4 portfolio-item ' . $term->slug . '">
+						  <div class="portfolio-box">
+							<div class="portfolio-image">'.get_the_post_thumbnail( get_the_ID(), 'medium', array( 'class' => 'alignleft' ) ).'
+							  <div class="portfolio-icon">
+								<a href="'.$portfolio_link.'" class="mfp-iframe" target="_blank">
+								  <i class="bi bi-music-note-beamed"></i>
+								</a>
+							  </div>
+							</div>
+							<div class="portfolio-content">
+							  <h6 class="blog-header">'.get_the_title().'</h6>
+							</div>
+						  </div>
+						</div>';
+					}
+				}
+			?>
 	</div>
   </section>
   <!--  Portfolio End  -->
