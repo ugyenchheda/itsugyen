@@ -105,7 +105,10 @@ header, .right-side {
   border: 1px solid #23c1f7;
 }
 .primary-button:hover {
-  color: #fff;
+  color: #23c1f7;
+  background: #fff;
+  border: 1px solid #23c1f7 !important;
+  transition: ease-in 0.5s;
 }
 /*------------------------- Next & Prev Page -------------------------*/
 .next-prev-page button {
@@ -459,6 +462,7 @@ header, .right-side {
 .primary-button {
   color: #fff;
   background-color: #23c1f7;
+  transition: ease 0.9s;
 }
 .color-scheme{
   border-radius: 0 0 0.75rem 0.75rem;

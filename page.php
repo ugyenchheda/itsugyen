@@ -728,7 +728,7 @@ if ($query->have_posts()) {
 		  echo '<div class="col-md-6">
 			<a href="' . get_the_permalink() . '" class="blog-box">
 			  <div class="blog-image">
-			  ' . get_the_post_thumbnail(get_the_ID(), 'post_feat_xl', array('class' => 'alignleft')) . '
+			  ' . get_the_post_thumbnail(get_the_ID(), 'post_image_xl', array('class' => 'alignleft')) . '
 				<div class="blog-icon">
 				  <i class="bi bi-journal-text"></i>
 				</div>
