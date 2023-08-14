@@ -642,24 +642,25 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 		<ul id="portfolio-filter" class="list-inline col-lg-12 portfolio-filter text-center">
 		  <li class="list-inline-item">
 			<a href="javascript:void(0)" data-filter="*" class="active">All</a>
-		  </li><?php
-$custom_post_type = 'portfolio';
-$terms = get_terms(array(
-    'taxonomy' => 'category',
-    'hide_empty' => true,
-));
+		  </li>
+		  	<?php
+				$custom_post_type = 'portfolio';
+				$terms = get_terms(array(
+					'taxonomy' => 'category',
+					'hide_empty' => true,
+				));
 
-if (!empty($terms)) {
-    foreach ($terms as $term) {
-        // Exclude the "Uncategorized" category
-        if ($term->slug !== 'uncategorized') {
-            echo '<li class="list-inline-item"><a href="javascript:void(0)" data-filter=".' . $term->slug . '">' . $term->name . '</a></li>';
-        }
-    }
-} else {
-    echo 'No terms found for this custom post type and taxonomy.';
-}
-?>
+				if (!empty($terms)) {
+					foreach ($terms as $term) {
+						// Exclude the "Uncategorized" category
+						if ($term->slug !== 'uncategorized') {
+							echo '<li class="list-inline-item"><a href="javascript:void(0)" data-filter=".' . $term->slug . '">' . $term->name . '</a></li>';
+						}
+					}
+				} else {
+					echo 'No terms found for this custom post type and taxonomy.';
+				}
+			?>
 		</ul>
 	  </div>
 	  <div class="portfolio-items border-line-v row">
@@ -715,10 +716,6 @@ if ($query->have_posts()) {
 	  <h3 class="subtitle">Latest News</h3>
 	  <div class="boxes">
 		<div class="row vertical-line">
-		  <!-- Item 01 -->
-
-		  
-		
 		<?php 
 		$args = array(
 				'post_type' => 'post', 
@@ -748,60 +745,6 @@ if ($query->have_posts()) {
 				}
 			}
 		  ?>
-		  <!-- Item 02 -->
-		  <div class="col-md-6">
-			<a href="webdesigner-blog-singel-colorfull.html" class="blog-box">
-			  <div class="blog-image">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/blog-item2.jpg" alt="/">
-				<div class="blog-icon">
-				  <i class="bi bi-journal-text"></i>
-				</div>
-			  </div>
-			  <div class="blog-post-content">
-				<div class="blog-dates">
-				  <span>20 June 2021</span>
-				</div>
-				<h6 class="blog-header">What Resources help you with your photography</h6>
-				<p class="mb-0">Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
-			  </div>
-			</a>
-		  </div>
-		  <!-- Item 03 -->
-		  <div class="col-md-6">
-			<a href="webdesigner-blog-singel-colorfull.html" class="blog-box">
-			  <div class="blog-image">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/blog-item3.jpg" alt="/">
-				<div class="blog-icon">
-				  <i class="bi bi-journal-text"></i>
-				</div>
-			  </div>
-			  <div class="blog-post-content">
-				<div class="blog-dates">
-				  <span>20 June 2021</span>
-				</div>
-				<h6 class="blog-header">Improve your Skills with blog posts on photography</h6>
-				<p class="mb-0">Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
-			  </div>
-			</a>
-		  </div>
-		  <!-- Item 04 -->
-		  <div class="col-md-6">
-			<a href="webdesigner-blog-singel-colorfull.html" class="blog-box">
-			  <div class="blog-image">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/blog-item4.jpg" alt="/">
-				<div class="blog-icon">
-				  <i class="bi bi-journal-text"></i>
-				</div>
-			  </div>
-			  <div class="blog-post-content">
-				<div class="blog-dates">
-				  <span>20 June 2021</span>
-				</div>
-				<h6 class="blog-header">Get Inspiration from photo stories, interviews, and resource</h6>
-				<p class="mb-0">Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
-			  </div>
-			</a>
-		  </div>
 		</div>
 	  </div>
 	</div>
