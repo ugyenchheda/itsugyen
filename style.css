@@ -824,6 +824,11 @@ body {
     margin-right: 1rem;
   }
   /*------------------------- Blog -------------------------*/
+  h6.blog-header {
+    margin-bottom: -10px;
+    margin-top: 10px;
+    font-weight: bold;
+}
   .blog .blog-image {
     overflow: hidden;
     position: relative;

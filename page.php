@@ -661,8 +661,6 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 		</ul>
 	  </div>
 	  <div class="portfolio-items border-line-v row">
-		<!-- Item 01 -->
-		
 		<?php 
 		$args = array(
 				'post_type' => 'portfolio', 
@@ -710,23 +708,38 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 	  <div class="boxes">
 		<div class="row vertical-line">
 		  <!-- Item 01 -->
-		  <div class="col-md-6">
-			<a href="webdesigner-blog-singel-colorfull.html" class="blog-box">
+
+		  
+		
+		<?php 
+		$args = array(
+				'post_type' => 'post', 
+			);
+			$query = new WP_Query($args);
+
+			if ($query->have_posts()) {
+				while ($query->have_posts()) {
+					$query->the_post();
+		  echo '<div class="col-md-6">
+			<a href="' . get_the_permalink() . '" class="blog-box">
 			  <div class="blog-image">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/webdesigner/blog-item1.jpg" alt="/">
+			  ' . get_the_post_thumbnail(get_the_ID(), 'post_feat_xl', array('class' => 'alignleft')) . '
 				<div class="blog-icon">
 				  <i class="bi bi-journal-text"></i>
 				</div>
 			  </div>
 			  <div class="blog-post-content">
+			  	<h6 class="blog-header">' . get_the_title() . '</h6>
 				<div class="blog-dates">
-				  <span>20 June 2021</span>
+				  <span>' . get_the_date() . '</span>
 				</div>
-				<h6 class="blog-header">Stay informed about the latest cameras and money of that</h6>
-				<p class="mb-0">Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+				<p class="mb-0">' . get_the_excerpt() . '</p>
 			  </div>
 			</a>
-		  </div>
+		  </div>';
+				}
+			}
+		  ?>
 		  <!-- Item 02 -->
 		  <div class="col-md-6">
 			<a href="webdesigner-blog-singel-colorfull.html" class="blog-box">
