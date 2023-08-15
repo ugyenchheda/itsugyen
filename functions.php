@@ -121,6 +121,21 @@ function itsugyen_main_scripts() {
 	wp_enqueue_script( 'owl.carousel.min', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'isotope', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'itsugyen', get_template_directory_uri() . '/assets/js/itsugyen.js', array(), _S_VERSION, true );
+
+	$args = array(
+        'posts_per_page' => '1',
+        'post_type'      => 'post',
+        'orderby' => 'date',
+        'order' => 'DESC',
+    );
+
+    $query = new WP_Query($args);
+    $ajax_url = admin_url('admin-ajax.php');
+    wp_localize_script( 'itsugyen', 'my_ajax_object', array(
+        'ajax_url' => $ajax_url,
+        'no_of_news_hp' => '1',
+        // Add any other variables you need to pass to your custom script here
+    ));
 }
 add_action( 'wp_enqueue_scripts', 'itsugyen_main_scripts' );
 
@@ -666,8 +681,6 @@ function page_experience_meta() {
 			'type' => 'textarea_small',
 		) );
 }
-
-
 // Register Portfolio Post Type
 function portfolio_post_type() {
 
@@ -744,4 +757,52 @@ function portfolio_meta() {
 	'id'   => 'portfolio_link',
 	'type' => 'text',
 	));
+}
+
+
+function loadingNews() {
+    $page = $_POST['page'];
+    $loaded_post_ids = isset($_POST['loaded_post_ids']) ? $_POST['loaded_post_ids'] : array();
+
+    $args = array(
+        'posts_per_page' => '1',
+        'post_type'      => 'post',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post__not_in' => $loaded_post_ids
+    );
+
+    $query = new WP_Query($args);
+
+    ob_start(); 
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            $loaded_post_ids[] = get_the_ID();
+            echo '<div class="col-md-6">
+			<a href="' . get_the_permalink() . '" class="blog-box">
+			  <div class="blog-image">
+			  ' . get_the_post_thumbnail(get_the_ID(), 'post_image_xl', array('class' => 'alignleft')) . '
+				<div class="blog-icon">
+				  <i class="bi bi-journal-text"></i>
+				</div>
+			  </div>
+			  <div class="blog-post-content">
+			  	<h6 class="blog-header">' . get_the_title() . '</h6>
+				<div class="blog-dates">
+				  <span>' . get_the_date() . '</span>
+				</div>
+				<p class="mb-0">' . get_the_excerpt() . '</p>
+			  </div>
+			</a>
+		  </div>';
+			}
+			wp_reset_postdata();
+		}
+	
+		$response = ob_get_clean(); // Get the buffered output and store it in $response variable
+		$max_pages = $query->max_num_pages;
+		$last_page = $query->max_num_pages === $page;
+		wp_send_json(array('content' => $response, 'max_pages' => $max_pages));
 }

@@ -715,10 +715,11 @@ if ($query->have_posts()) {
 	<div class="container">
 	  <h3 class="subtitle">Latest News</h3>
 	  <div class="boxes">
-		<div class="row vertical-line">
+		<div class="row vertical-line" id="append-here">
 		<?php 
 		$args = array(
 				'post_type' => 'post', 
+				'posts_per_page' => '1',
 			);
 			$query = new WP_Query($args);
 
@@ -744,7 +745,13 @@ if ($query->have_posts()) {
 		  </div>';
 				}
 			}
+			wp_reset_postdata(); // Restore original post data
 		  ?>
+		  
+                            <div class="load-more-container">
+                                <button id="load-more-news">View More News</button>
+                                <p id="fully-loaded">Hooray! You caught up with all the news for today.</p>
+                            </div>
 		</div>
 	  </div>
 	</div>
