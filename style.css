@@ -886,6 +886,12 @@ body {
     margin-top: 1rem;
     display: inline-block;
   }
+  p#fully-loaded {
+    text-align: center;
+    margin-top: 17px;
+    margin-bottom: 11px;
+    font-style: italic;
+}
   /*--------------------------- Contact ---------------------------*/
   .contact-box {
     margin-top: 40px;

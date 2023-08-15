@@ -751,9 +751,9 @@ if ($query->have_posts()) {
 	  </div>
 	  
 		  
-	  <div class="load-more-container">
-                                <button id="load-more-news">View More News</button>
-                                <p id="fully-loaded">Hooray! You caught up with all the news for today.</p>
+	  <div class="load-more-containerv text-center">
+                                <button id="load-more-news" class="primary-button">View More News</button>
+                                <p id="fully-loaded">That's all for now &#128522.</p>
                             </div>
 	</div>
   </section>
