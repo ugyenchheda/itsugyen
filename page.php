@@ -719,7 +719,7 @@ if ($query->have_posts()) {
 		<?php 
 		$args = array(
 				'post_type' => 'post', 
-				'posts_per_page' => '1',
+				'posts_per_page' => '2',
 			);
 			$query = new WP_Query($args);
 
@@ -747,13 +747,14 @@ if ($query->have_posts()) {
 			}
 			wp_reset_postdata(); // Restore original post data
 		  ?>
+		</div>
+	  </div>
+	  
 		  
-                            <div class="load-more-container">
+	  <div class="load-more-container">
                                 <button id="load-more-news">View More News</button>
                                 <p id="fully-loaded">Hooray! You caught up with all the news for today.</p>
                             </div>
-		</div>
-	  </div>
 	</div>
   </section>
   <!--  Blog End  -->

@@ -964,20 +964,21 @@ jQuery(document).ready(function() {
         });
 });
 
-//news load more
 jQuery(document).ready(function() {
     var currentPage = 1;
-    var maxPages = 1; 
+    var maxPages = 1; // Initialize maxPages to 1
     var loading = false;
-	jQuery('#fully-loaded').hide();
+    var noMorePosts = false; // Flag to track if there are no more posts
+
+    jQuery('#fully-loaded').hide();
+
     jQuery(document).on('click', '#load-more-news', function() {
-        if (!loading && currentPage <= maxPages) { // Modify the condition to include equal to
-            loading = true; // Set loading to true to prevent multiple AJAX requests
+        if (!loading && !noMorePosts && currentPage <= maxPages) {
+            loading = true;
             var nextPage = currentPage + 1;
             var ajaxurl = my_ajax_object.ajax_url;
-            var loadedPostIds = []; // Array to store the loaded post IDs
+            var loadedPostIds = [];
 
-            // Get the container element where the news items will be appended
             var $appendContainer = jQuery('#append-here');
 
             $.ajax({
@@ -993,28 +994,29 @@ jQuery(document).ready(function() {
                     $('#load-more-news').html('<span>Loading <i class="fa fa-spinner fa-spin"></i></span>');
                 },
                 success: function(response) {
-                    $('#load-more-news').text('Load More'); // Reset the button text
+                    $('#load-more-news').text('Load More');
                     if (response.content) {
-                        $appendContainer.append(response.content); // Append the new news items to the container
-                        currentPage = nextPage; // Update the current page
-                        loading = false; // Reset loading flag after success
-                        loadedPostIds = response.loaded_post_ids; // Update the loaded post IDs
+                        $appendContainer.append(response.content);
+                        currentPage = nextPage;
+                        loading = false;
+                        loadedPostIds = response.loaded_post_ids;
 
-                        // Check if it's the last page and hide the button if true
-						if (currentPage >= response.max_pages) {
+                        if (currentPage >= response.max_pages) {
+                            noMorePosts = true; // No more posts to load
                             jQuery('#load-more-news').hide();
-                            jQuery('#fully-loaded').show(); // Show the fully-loaded element
-                        } else {
-                            jQuery('#load-more-news').show(); // Show the load more button if there are more pages
-                            jQuery('#fully-loaded').hide(); // Hide the fully-loaded element if there are more pages
+                            jQuery('#fully-loaded').show();
                         }
-                        // Update maxPages with the actual value from the server response
+
                         maxPages = response.max_pages;
+                    } else {
+                        noMorePosts = true; // No more posts to load
+                        jQuery('#load-more-news').hide();
+                        jQuery('#fully-loaded').show();
                     }
                 },
                 error: function(xhr, status, error) {
                     console.log(xhr.responseText);
-                    loading = false; // Reset loading to false in case of an error
+                    loading = false;
                 }
             });
         }
