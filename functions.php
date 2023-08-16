@@ -750,6 +750,90 @@ function portfolio_meta() {
 	));
 }
 
+add_action('cmb2_admin_init', 'contact_meta');
+function contact_meta() {
+	$cmb = new_cmb2_box(array(
+		'id' => 'Contact',
+		'title' => __('Contact Section:', 'ugyen'),
+		'object_types' => array('page'),
+		'context' => 'normal',
+		'priority' => 'high',
+		'show_names' => true,
+		'closed' => true,
+
+	));
+
+	$cmb->add_field(array(
+	'name' => 'Contact Section Title',
+	'desc' => 'Add title for contact section.',
+	'id'   => 'contact_title',
+	'type' => 'text',
+	));
+
+	$cmb->add_field(array(
+	'name' => 'Contact Section Description',
+	'desc' => 'Add Description for contact section.',
+	'id'   => 'contact_description',
+	'type' => 'textarea_small',
+	));
+
+
+	$cmb->add_field(array(
+	'name' => 'Phone Number',
+	'desc' => 'Add phone number.',
+	'id'   => 'contact_phone',
+	'type' => 'text',
+	));
+
+	$cmb->add_field(array(
+	'name' => 'Email Address',
+	'desc' => 'Add Email Address.',
+	'id'   => 'contact_email',
+	'type' => 'text',
+	));
+
+	$cmb->add_field(array(
+	'name' => ' Address',
+	'desc' => 'Add  Address.',
+	'id'   => 'contact_address',
+	'type' => 'text',
+	));
+
+	$cmb->add_field(array(
+	'name' => 'WhatsApp',
+	'desc' => 'Add WhatsApp Address.',
+	'id'   => 'contact_whatsapp',
+	'type' => 'text',
+	));
+
+	$cmb->add_field(array(
+	'name' => 'Facebook Page',
+	'desc' => 'Add Facebook Page Address.',
+	'id'   => 'contact_facebook',
+	'type' => 'text',
+	));
+
+	$cmb->add_field(array(
+	'name' => 'Instagram',
+	'desc' => 'Add Instagram Address.',
+	'id'   => 'contact_instagram',
+	'type' => 'text',
+	));
+
+	$cmb->add_field(array(
+	'name' => 'Github',
+	'desc' => 'Add Github Address.',
+	'id'   => 'contact_github',
+	'type' => 'text',
+	));
+
+	$cmb->add_field(array(
+	'name' => 'Website Url',
+	'desc' => 'Add Website Url Address.',
+	'id'   => 'contact_website',
+	'type' => 'text',
+	));
+}
 add_action('wp_ajax_loadingNews', 'loadingNews');
 add_action('wp_ajax_nopriv_loadingNews', 'loadingNews');
 function loadingNews() {
