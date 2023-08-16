@@ -46,14 +46,23 @@ body {
   .mb-6{
     margin-bottom: 80px;
   }
-  .t-green{
+  .color-green{
     color: #3cb371;
   }
-  .t-purple{
+  .color-purple{
     color: #9370db;
   }
-  .t-red{
+  .color-red{
     color: #cd5c5c;
+  }
+  .color-blue{
+    color: #3b5998 ;
+  }
+  .color-dark{
+    color: #2b3137 ;
+  }
+  .color-laptop{
+    color: #555050 ;
   }
   .max-width-d{
     max-width: 1440px;
@@ -416,7 +425,7 @@ body {
   }
   .social i {
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 5px;
     text-align: center;
   }
   .social img {

@@ -24,7 +24,14 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 
 <!--   Menu Overlay Mobile -->
 <div class="menu-overlay d-none"></div>
+<?php 
+$contact_whatsapp = get_post_meta( get_the_ID(), 'contact_whatsapp', true);
+$contact_facebook = get_post_meta( get_the_ID(), 'contact_facebook', true);
+$contact_instagram = get_post_meta( get_the_ID(), 'contact_instagram', true);
+$contact_github = get_post_meta( get_the_ID(), 'contact_github', true);
+$contact_website = get_post_meta( get_the_ID(), 'contact_website', true);
 
+?>
 <!--   Right Side Start  -->
 <div class="right-side d-none d-lg-block">
   <div id="date"></div>
@@ -33,14 +40,20 @@ $about_freelancing = get_post_meta( get_the_ID(), 'about_freelancing', true);
 	  <span>Follow Me</span>
 	</div>
 	<div class="social d-none d-lg-block">
-	  <a href="javascript:void(0);">
-		<i class="bi bi-whatsapp t-green"></i>
+	  <a href="<?php echo $contact_website; ?>" target="_blank">
+		<i class="bi bi-laptop color-laptop"></i>
 	  </a>
-	  <a href="javascript:void(0);">
-		<i class="bi bi-instagram t-purple"></i>
+	  <a href="<?php echo $contact_github; ?>" target="_blank">
+		<i class="bi bi-github color-dark"></i>
 	  </a>
-	  <a href="javascript:void(0);">
-		<i class="bi bi-dribbble t-red"></i>
+	  <a href="<?php echo $contact_facebook; ?>" target="_blank">
+		<i class="bi bi bi-facebook color-blue"></i>
+	  </a>
+	  <a href="<?php echo $contact_instagram; ?>" target="_blank">
+		<i class="bi bi-instagram color-purple"></i>
+	  </a>
+	  <a href="<?php echo $contact_whatsapp; ?>" target="_blank">
+		<i class="bi bi-whatsapp color-green"></i>
 	  </a>
 	</div>
   </div>
