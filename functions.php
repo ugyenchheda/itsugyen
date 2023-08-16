@@ -776,8 +776,7 @@ function contact_meta() {
 	'id'   => 'contact_description',
 	'type' => 'textarea_small',
 	));
-
-
+	
 	$cmb->add_field(array(
 	'name' => 'Phone Number',
 	'desc' => 'Add phone number.',

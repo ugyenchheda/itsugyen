@@ -760,16 +760,22 @@ if ($query->have_posts()) {
   <!--  Blog End  -->
 
   <!-- Contact Start -->
+
+  <?php
+  $contact_title = get_post_meta( get_the_ID(), 'contact_title', true );
+  $contact_description = get_post_meta( get_the_ID(), 'contact_description', true );
+  $contact_email = get_post_meta( get_the_ID(), 'contact_email', true );
+  $contact_phone = get_post_meta( get_the_ID(), 'contact_phone', true );
+  $contact_address = get_post_meta( get_the_ID(), 'contact_address', true );
+  $contact_address = get_post_meta( get_the_ID(), 'contact_address', true );
+  ?>
   <section id="contact" class="section contact w-100">
 	<div class="container">
-	  <h3 class="subtitle">Get in Touch</h3>
-	  <!-- Map -->
-	  <div class="row mt-5">
-		<div class="col-lg-12"><div id="my-map" data-location-lat="43.053454" data-location-lng="-76.144508" data-location-icon="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/location-map.png"></div></div>
-	  </div>
+	  <h3 class="subtitle"><?php echo $contact_title;?></h3>
 	  <div class="row mt-4">
 		<!-- Address Info -->
 		<div class="col-12 col-xl-5">
+	  <p id="fully-loaded" style="text-align: justify;"><?php echo $contact_description;?></p>
 		  <div class="row">
 			<!--  Item 01 -->
 			<div class="col-lg-12">
@@ -779,7 +785,7 @@ if ($query->have_posts()) {
 				</div>
 				<div class="info-text">
 				  <h5>Mail Me</h5>
-				  <small><a href="https://retrina.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="94f1f9f5fdf8d4f1ecf5f9e4f8f1baf7fbf9">[email&#160;protected]</a></small>
+				  <small><a href="mailto:<?php echo $contact_email;?>" class="__cf_email__"><?php echo $contact_email;?></a></small>
 				</div>
 			  </div>
 			</div>
@@ -790,8 +796,8 @@ if ($query->have_posts()) {
 				  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/phone-call.svg" alt="/">
 				</div>
 				<div class="info-text">
-				  <h5>Call Us On</h5>
-				  <small>+123 456 7890</small>
+				  <h5>Call Me On</h5>
+				  <small><a href="tel:<?php echo $contact_email;?>" class="__cf_email__"><?php echo $contact_phone;?></a></small>
 				</div>
 			  </div>
 			</div>
@@ -802,8 +808,8 @@ if ($query->have_posts()) {
 				  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/location.svg" alt="/">
 				</div>
 				<div class="info-text">
-				  <h5>Visit office</h5>
-				  <small>24 Street, New York, United State.</small>
+				  <h5>Visit Me</h5>
+				  <small><?php echo $contact_address;?></small>
 				</div>
 			  </div>
 			</div>
@@ -815,32 +821,8 @@ if ($query->have_posts()) {
 			<div class="contact-form">
 			  <form id="contactForm">
 				<div class="row">
-				  <div class="col-lg-12 form-item">
-					<div class="form-group">
-					  <input name="name" id="name" type="text" class="form-control" placeholder="Complate Name*" required>
-					</div>
-				  </div>
-				  <div class="col-lg-12 form-item">
-					<div class="form-group">
-					  <input name="email" id="email" type="email" class="form-control" placeholder="Email Address*" required>
-					</div>
-				  </div>
-				  <div class="col-lg-12 form-item">
-					<div class="form-group">
-					  <input name="subject" id="subject" type="tel" class="form-control" placeholder="Phone number*" required>
-					</div>
-				  </div>
-				  <div class="col-12 form-item">
-					<div class="form-group">
-					  <textarea name="comments" id="comments" rows="3" class="form-control textarea" placeholder="Your message..."></textarea>
-					</div>
-				  </div>
-				  <div class="col-sm-12 text-left">
-					<div class="pill-btn mt-4 mb-3">
-					  <button type="submit" class="secondary-button"> Send Message </button>
-					</div>
-					
-				  </div>
+				  <h5>Contact Form</h5>
+					<?php echo apply_shortcodes( '[contact-form-7 id="a59f345" title="Contact form 1"]' ); ?>
 				</div>
 			  </form>
 			</div>
