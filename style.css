@@ -30,6 +30,11 @@ body {
     font-family: "Poppins", sans-serif;
     line-height: 1.618;
   }
+  
+  .css-typing h2 {
+    font-size: 3rem;
+    font-weight: bold;
+}
   a,a:hover {
     text-decoration: none !important;
   }
@@ -1838,7 +1843,6 @@ input.wpcf7-form-control.wpcf7-submit:hover {
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
-  
   @keyframes type {
     0% {
       width: 0;
@@ -1937,6 +1941,7 @@ input.wpcf7-form-control.wpcf7-submit:hover {
     .left-side{
       padding-top: 40px;
     }
+    
   }
   @media (max-width: 1230px) {
     .extend-icon{

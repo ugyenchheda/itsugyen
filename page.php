@@ -158,7 +158,8 @@ $contact_website = get_post_meta( get_the_ID(), 'contact_website', true);
 			<div class="ugyen-content mt-4 mx-auto mx-lg-0 text-lg-left mt-lg-none">			  
 				<div class="css-typing">
 					<p class="base-color"><i class="bi bi-code-slash"></i> <?php echo $position_title;  ?></p>
-			  		<p class="intro-style"><?php echo $intro_main; ?></p>
+			 
+			  <h2><?php echo $intro_main; ?></h2>
 					<p><i class="bi bi-caret-right"></i> Feel free to browse and know about my work...</p>
 				</div>
 			  <!-- <div class="typing-demo"><i class="bi bi-caret-right"></i> Feel free to browse and know about my work...</div> -->
