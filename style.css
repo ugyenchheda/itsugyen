@@ -1814,14 +1814,18 @@ input.wpcf7-form-control.wpcf7-submit:hover {
   }
   
   .css-typing p:nth-child(2) {
-    width: 100%;
+    width: 406px;
     opacity: 0;
-    -webkit-animation: type2 2s steps(40, end);
+    -webkit-animation: type2 5s steps(40, end);
     animation: type2 2s steps(40, end);
     -webkit-animation-delay: 2s;
     animation-delay: 2s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 3px 2px 4px #8b8b8b;
+    color: #000000;
   }
   
   .css-typing p:nth-child(3) {

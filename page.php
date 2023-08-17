@@ -4,6 +4,7 @@
 get_header();
 $position_title = get_post_meta( get_the_ID(), 'position_title', true );
 $intro_part = get_post_meta( get_the_ID(), 'intro_part', true );
+$intro_main = get_post_meta( get_the_ID(), 'intro_main', true );
 $intro_banner = get_post_meta( get_the_ID(), 'intro_banner', true);
 $intro_cv = get_post_meta( get_the_ID(), 'intro_cv', true);
 $about_title = get_post_meta( get_the_ID(), 'about_title', true);
@@ -157,8 +158,7 @@ $contact_website = get_post_meta( get_the_ID(), 'contact_website', true);
 			<div class="ugyen-content mt-4 mx-auto mx-lg-0 text-lg-left mt-lg-none">			  
 				<div class="css-typing">
 					<p class="base-color"><i class="bi bi-code-slash"></i> <?php echo $position_title;  ?></p>
-			 
-			  <p class="intro-style"><?php echo $intro_part; ?></p>
+			  		<p class="intro-style"><?php echo $intro_main; ?></p>
 					<p><i class="bi bi-caret-right"></i> Feel free to browse and know about my work...</p>
 				</div>
 			  <!-- <div class="typing-demo"><i class="bi bi-caret-right"></i> Feel free to browse and know about my work...</div> -->

@@ -156,7 +156,7 @@ function page_intro_meta() {
       $cmb->add_field(array(
       'name' => 'Intro',
       'desc' => 'Add self intro.',
-      'id'   => 'intro_part',
+      'id'   => 'intro_main',
       'type' => 'textarea_code',
       ));
           
