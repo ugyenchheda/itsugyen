@@ -154,10 +154,14 @@ $contact_website = get_post_meta( get_the_ID(), 'contact_website', true);
 			<div class="ugyen-image d-inline-block d-lg-none">
 			  <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'full'); ?>" alt="/">
 			</div>
-			<div class="ugyen-content mt-4 mx-auto mx-lg-0 text-lg-left mt-lg-none">
-			  <p class="base-color"><i class="bi bi-code-slash"></i> <?php echo $position_title;  ?></p>
-			  <h2><?php echo $intro_part; ?></h2>
-			  <div class="typing-demo"><i class="bi bi-caret-right"></i> Feel free to browse and know about my work...</div>
+			<div class="ugyen-content mt-4 mx-auto mx-lg-0 text-lg-left mt-lg-none">			  
+				<div class="css-typing">
+					<p class="base-color"><i class="bi bi-code-slash"></i> <?php echo $position_title;  ?></p>
+			 
+			  <p class="intro-style"><?php echo $intro_part; ?></p>
+					<p><i class="bi bi-caret-right"></i> Feel free to browse and know about my work...</p>
+				</div>
+			  <!-- <div class="typing-demo"><i class="bi bi-caret-right"></i> Feel free to browse and know about my work...</div> -->
 			</div>
 		  </div>
 		</div>
