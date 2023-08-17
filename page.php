@@ -324,50 +324,43 @@ $contact_website = get_post_meta( get_the_ID(), 'contact_website', true);
 		  </div>
 		</div>
 		<div class="col-lg-5 ms-auto mt-5 mt-lg-0">
-		<h3 class="subtitle">My Clients</h3>
-		<div class="testimonial mt-5">
-		<div class="owl-carousel">
-		  <!-- Item 01 -->
-		  <div class="testimonial-box">
-			<p class="testimonial-comment">"My motivation is customer satisfaction. Trust me and trust your growth asset management to my expertise gained over the years. My goal is continuous achievement.!"</p>
-			<div class="testimonial-item">
-			  <div class="testimonial-image">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/man.png" alt="/">
-			  </div>
-			  <div class="testimonial-info">
-				<p class="mb-0">Leo Anderson</p>
-				<small class="testimonial-jub">Web Designer</small>
-			  </div>
+			<?php $testimonial_title = get_post_meta( get_the_ID(), 'testimonial_title', true ); ?>
+			<h3 class="subtitle"><?php echo $testimonial_title; ?></h3>
+
+			<div class="testimonial mt-5">
+				<div class="owl-carousel">
+					<?php 
+						$testimonials_types = get_post_meta( get_the_ID(), 'testimonials', true );
+						foreach ( (array) $testimonials_types as $key => $testimonials_type ) {
+							$testimonials_name = $testimonials_description = $testimonials_image = $testimonials_company = '';
+							if ( isset( $testimonials_type['testimonials_name'] ) ) {
+								$testimonials_name = esc_html( $testimonials_type['testimonials_name'] );
+							}
+							if ( isset( $testimonials_type['testimonials_description'] ) ) {
+								$testimonials_description = esc_html( $testimonials_type['testimonials_description'] );
+							}
+							if ( isset( $testimonials_type['testimonials_company'] ) ) {
+								$testimonials_company = esc_html( $testimonials_type['testimonials_company']);
+							}
+							if ( isset( $testimonials_type['testimonials_image'] ) ) {
+								$testimonials_image = esc_html( $testimonials_type['testimonials_image']);
+							}
+							echo '<div class="testimonial-box">
+									<blockquote><p class="testimonial-comment">'.$testimonials_description.'</p></blockquote>
+									<div class="testimonial-item">
+										<div class="testimonial-image">
+											<img src="'.$testimonials_image.'" alt="'.$testimonials_name.'">
+										</div>
+										<div class="testimonial-info">
+											<p class="mb-0">'.$testimonials_name.'</p>
+											<small class="testimonial-jub">'.$testimonials_company.'</small>
+										</div>
+									</div>
+								</div>';
+						}
+					?>
+				</div>
 			</div>
-		  </div>
-		  <!-- Item 02 -->
-		  <div class="testimonial-box">
-			<p class="testimonial-comment">"My motivation is customer satisfaction. Trust me and trust your growth asset management to my expertise gained over the years. My goal is continuous achievement.!"</p>
-			<div class="testimonial-item">
-			  <div class="testimonial-image">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/woman.png" alt="/">
-			  </div>
-			  <div class="testimonial-info">
-				<p class="mb-0">Hanah Smith</p>
-				<small class="testimonial-jub">Web Developer</small>
-			  </div>
-			</div>
-		  </div>
-		  <!-- Item 03 -->
-		  <div class="testimonial-box">
-			<p class="testimonial-comment">"My motivation is customer satisfaction. Trust me and trust your growth asset management to my expertise gained over the years. My goal is continuous achievement.!"</p>
-			<div class="testimonial-item">
-			  <div class="testimonial-image">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/colorfull/man1.png" alt="/">
-			  </div>
-			  <div class="testimonial-info">
-				<p class="mb-0">Angela Anderson</p>
-				<small class="testimonial-jub">Web Designer</small>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </div>
 		</div>
 	  </div>
 	  <!--  Client  -->
