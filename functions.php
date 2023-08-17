@@ -833,6 +833,72 @@ function contact_meta() {
 	'type' => 'text',
 	));
 }
+
+add_action('cmb2_admin_init', 'testimonials_meta');
+function testimonials_meta() {
+	$cmb = new_cmb2_box(array(
+		'id' => 'page_testimonials',
+		'title' => __('Testimonials Section:', 'ugyen'),
+		'object_types' => array('page'),
+		'context' => 'normal',
+		'priority' => 'high',
+		'show_names' => true,
+		'closed' => true,
+
+	));
+
+	$cmb->add_field(array(
+	'name' => 'Testimonial Title',
+	'desc' => 'Add the title for testimonial section.',
+	'id'   => 'testimonial_title',
+	'type' => 'text',
+	));
+
+
+	$group_field_id = $cmb->add_field( array(
+		'name' => 'Add Completed testimonials Details',
+		'id'          => 'testimonials',
+		'type'        => 'group',
+		'description' => __( 'Add varieties of testimonialss with their description and counts.', 'ugyen' ),
+		'options'     => array(
+			'group_title'       => __( 'Testimonials {#}', 'ugyen' ), 
+			'add_button'        => __( 'Add Another testimonials', 'ugyen' ),
+			'remove_button'     => __( 'Remove testimonials', 'ugyen' ),
+			'sortable'          => true,
+			 'closed'         => true, 
+			'remove_confirm' => esc_html__( 'Are you sure you want to remove this testimonials?', 'ugyen' ), 
+		),
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Name of Client',
+			'id'   => 'testimonials_name',
+			'type' => 'text',
+			
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Testimonial',
+			'description' => 'Testimonials',
+			'id'   => 'testimonials_description',
+			'type' => 'textarea_small',
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Clients Company',
+			'description' => 'Company of the Client',
+			'id'   => 'testimonials_company',
+			'type' => 'text',
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Clients Photo',
+			'id'   => 'testimonials_image',
+			'type' => 'file',
+		) );
+	
+	
+}
 add_action('wp_ajax_loadingNews', 'loadingNews');
 add_action('wp_ajax_nopriv_loadingNews', 'loadingNews');
 function loadingNews() {
