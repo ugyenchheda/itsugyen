@@ -786,6 +786,9 @@ body {
   blockquote p {
     display: inline;
   }
+  .checked {
+    color: orange;
+  }
   /*------------------------- Portfolio -------------------------*/
   .portfolio-item{
     margin-bottom: 30px;
@@ -1727,7 +1730,7 @@ input.wpcf7-form-control.wpcf7-submit:hover {
     box-shadow: inset 3px 3px 3px #dadada, inset -3px -3px 3px #fafafa;
   }
   .testimonial-image img {
-    max-height: 49px;
+    max-height: 70px;
 }
   .theme-skin li a {
     display: block;

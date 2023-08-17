@@ -332,7 +332,7 @@ $contact_website = get_post_meta( get_the_ID(), 'contact_website', true);
 					<?php 
 						$testimonials_types = get_post_meta( get_the_ID(), 'testimonials', true );
 						foreach ( (array) $testimonials_types as $key => $testimonials_type ) {
-							$testimonials_name = $testimonials_description = $testimonials_image = $testimonials_company = '';
+							$testimonials_name = $testimonials_description = $testimonials_image = $testimonials_company = $testimonials_rating = '';
 							if ( isset( $testimonials_type['testimonials_name'] ) ) {
 								$testimonials_name = esc_html( $testimonials_type['testimonials_name'] );
 							}
@@ -345,15 +345,34 @@ $contact_website = get_post_meta( get_the_ID(), 'contact_website', true);
 							if ( isset( $testimonials_type['testimonials_image'] ) ) {
 								$testimonials_image = esc_html( $testimonials_type['testimonials_image']);
 							}
+							if ( isset( $testimonials_type['testimonials_rating'] ) ) {
+								$testimonials_rating = esc_html( $testimonials_type['testimonials_rating']);
+							}
+
+							if ( 'one' === $testimonials_rating ) {
+								$star_rating = '<span class="bi bi-star-fill checked"></span><span class="bi bi-star"></span><span class="bi bi-star"></span><span class="bi bi-star"></span><span class="bi bi-star"></span>';
+							} else if ('two' === $testimonials_rating) {
+								$star_rating = '<span class="bi bi-star-fill checked"></span><span class="bi bi-star-fill checked"></span><span class="bi bi-star"></span><span class="bi bi-star"></span><span class="bi bi-star"></span>';
+							} else if ('three' === $testimonials_rating) {
+								$star_rating = '<span class="bi bi-star-fill checked"></span>
+							<span class="bi bi-star-fill checked"></span><span class="bi bi-star-fill checked"></span><span class="bi bi-star"></span><span class="bi bi-star"></span>';
+							} else if ('four' === $testimonials_rating) {
+								$star_rating = '<span class="bi bi-star-fill checked"></span><span class="bi bi-star-fill checked"></span><span class="bi bi-star-fill checked"></span><span class="bi bi-star-fill checked"></span><span class="bi bi-star"></span>';
+							}else {
+								$star_rating = '<span class="bi bi-star-fill checked"></span><span class="bi bi-star-fill checked"></span><span class="bi bi-star-fill checked"></span><span class="bi bi-star-fill checked"></span><span class="bi bi-star-fill checked"></span>';
+							}
+								
 							echo '<div class="testimonial-box">
 									<blockquote><p class="testimonial-comment">'.$testimonials_description.'</p></blockquote>
+
 									<div class="testimonial-item">
 										<div class="testimonial-image">
 											<img src="'.$testimonials_image.'" alt="'.$testimonials_name.'">
 										</div>
 										<div class="testimonial-info">
 											<p class="mb-0">'.$testimonials_name.'</p>
-											<small class="testimonial-jub">'.$testimonials_company.'</small>
+											<small class="testimonial-jub">'.$testimonials_company.'</small></br>
+											<small class="testimonial-jub">'.$star_rating.'</small>
 										</div>
 									</div>
 								</div>';

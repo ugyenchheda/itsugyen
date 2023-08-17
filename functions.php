@@ -885,6 +885,21 @@ function testimonials_meta() {
 		) );
 	
 		$cmb->add_group_field( $group_field_id, array(
+			'name' => 'Rating',
+			'id'   => 'testimonials_rating',
+			'type'             => 'select',
+			'show_option_none' => true,
+			'default'          => 'five',
+			'options'          => array(
+				'one' => __( 'One', 'ugyen' ),
+				'two' => __( 'Two', 'ugyen' ),
+				'three' => __( 'Three', 'ugyen' ),
+				'four' => __( 'Four', 'ugyen' ),
+				'five' => __( 'Five', 'ugyen' ),
+			),
+		) );
+	
+		$cmb->add_group_field( $group_field_id, array(
 			'name' => 'Clients Company',
 			'description' => 'Company of the Client',
 			'id'   => 'testimonials_company',
