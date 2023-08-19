@@ -508,6 +508,9 @@ body {
     left: 50%;
     transform: translate(-50% , -50%);
   }
+  .ajax-page-nav {
+    margin-top: 72px;
+}
   /*------------------------- ugyen -------------------------*/
   .ugyen {
     position: relative;
@@ -1054,7 +1057,6 @@ input.wpcf7-form-control.wpcf7-submit:hover {
     margin-bottom: 0;
   }
   .single-portfolio-wrapper .entry-image img{
-    width: 100%;
     border-radius: 8px;
   }
   .single-portfolio-wrapper .entry-content h2 {
