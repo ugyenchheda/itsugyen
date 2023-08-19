@@ -58,19 +58,20 @@ if ($next_post) {
     <div class="nav-item ajax-page-prev-next">
         <?php if ($previous_post_link) : ?>
             <a class="ajax-page-load" href="<?php echo $previous_post_link; ?>" title="Previous Post">
-                <i class="bi bi-chevron-left"></i>
+			<i class="bi bi-skip-backward"></i>
             </a>
         <?php endif; ?>
         
         <?php if ($next_post_link) : ?>
             <a class="ajax-page-load" href="<?php echo $next_post_link; ?>" title="Next Post">
-                <i class="bi bi-chevron-right"></i>
+			<i class="bi bi-skip-forward"></i>
+
             </a>
         <?php endif; ?>
     </div>
     <div class="nav-item ajax-page-close-button">
         <a class="ajax-page-close-button" href="<?php echo home_url(); ?>" title="Close">
-            <i class="bi bi-x"></i>
+		<i class="bi bi-house-door"></i>
         </a>
     </div>
 </div>
@@ -88,10 +89,6 @@ if ($next_post) {
                   <div class="entry-image">
                     <?php echo  get_the_post_thumbnail(get_the_ID()) ; ?>
                   </div>
-                <div class="entry-content">
-                  <h2>Project Overview</h2>
-                  <p class="mb-0">These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show. </p>
-                </div>
               </div>
             </div>
             <aside class="col-lg-4 ms-auto sidebar mt-5 mt-lg-0">
@@ -101,35 +98,7 @@ if ($next_post) {
                   <div class="aside-title">
                     <h6>Project Details</h6>
                   </div>
-                  <p>These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show.</p>
-                  <div class="aside-item-portfolio">
-                    <ul class="list-unstyled">
-                      <li>
-                        <a href="#">Category: </a>
-                        <span> Photography</span>
-                      </li>
-                      <li>
-                        <a href="#">Client:</a>
-                        <span>LiLI Martin</span>
-                      </li>
-                      <li>
-                        <a href="#">Date:</a>
-                        <span> 22/04/2021</span>
-                      </li>
-                      <li>
-                        <a href="#">Project Value:</a>
-                        <span>87K</span>
-                      </li>
-                      <li>
-                        <a href="#">Location: </a>
-                        <span>Usa</span>
-                      </li>
-                      <li>
-                        <a href="#">Designer: </a>
-                        <span>John</span>
-                      </li>
-                    </ul>
-                  </div>
+					<?php echo get_the_content(); ?>  
                 </div>
               </div>
             </aside>
