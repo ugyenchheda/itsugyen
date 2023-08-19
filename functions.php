@@ -217,63 +217,6 @@ function page_about_meta() {
 
       ));
 
-      $cmb->add_field(array(
-      'name' => 'Post Title',
-      'desc' => 'Add the title of profession.',
-      'id'   => 'position_title',
-      'type' => 'text',
-      ));
-
-      $cmb->add_field(array(
-      'name' => 'Intro',
-      'desc' => 'Add self intro.',
-      'id'   => 'about_part',
-      'type' => 'textarea_small',
-      ));
-          
-      ;$cmb->add_field( array(
-        'name'    => 'Profile Banner',
-        'desc'    => 'Add image to show on intro part.',
-        'id'      => 'intro_banner',
-		'type'    => 'file',
-		'options' => array(
-			'url' => false, 
-		),
-		    'text'    => array(
-			'add_upload_file_text' => 'Add Banner' 
-			),
-			'query_args' => array(
-					'type' => array(
-						'image/gif',
-						'image/jpeg',
-						'image/png',
-					),
-			),
-		'preview_size' => 'medium', 
-	) );
-          
-	;$cmb->add_field( array(
-	  'name'    => 'CV',
-	  'desc'    => 'Add CV.',
-	  'id'      => 'intro_cv',
-	  'type'    => 'file',
-	  'options' => array(
-		  'url' => false, 
-	  ),
-		  'text'    => array(
-		  'add_upload_file_text' => 'Add cv' 
-		  ),
-		  'query_args' => array(
-				  'type' => array(
-					  'image/gif',
-					  'image/jpeg',
-					  'image/png',
-					  'application/pdf',
-				  ),
-		  ),
-	  'preview_size' => 'medium', 
-  ) );
-
   $cmb->add_field(array(
   'name' => 'About Me Title',
   'desc' => 'Add intro for about me.',
