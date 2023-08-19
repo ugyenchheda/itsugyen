@@ -202,55 +202,6 @@ function page_intro_meta() {
 		  ),
 	  'preview_size' => 'medium', 
   ) );
-
-  $cmb->add_field(array(
-  'name' => 'About Me Title',
-  'desc' => 'Add intro for about me.',
-  'id'   => 'about_title',
-  'type' => 'text',
-  ));
-
-  $cmb->add_field(array(
-  'name' => 'Email',
-  'desc' => 'Add email address.',
-  'id'   => 'about_email',
-  'type' => 'text',
-  ));
-
-  $cmb->add_field(array(
-  'name' => 'Phone',
-  'desc' => 'Add phone Number.',
-  'id'   => 'about_number',
-  'type' => 'text',
-  ));
-
-  $cmb->add_field(array(
-  'name' => 'Address',
-  'desc' => 'Add address.',
-  'id'   => 'about_address',
-  'type' => 'text',
-  ));
-
-  $cmb->add_field(array(
-  'name' => 'Age',
-  'desc' => 'Add age.',
-  'id'   => 'about_age',
-  'type' => 'text',
-  ));
-
-  $cmb->add_field(array(
-  'name' => 'Degree',
-  'desc' => 'Add degree.',
-  'id'   => 'about_degree',
-  'type' => 'text',
-  ));
-
-  $cmb->add_field(array(
-  'name' => 'Freelancing',
-  'desc' => 'Add freelancing availability.',
-  'id'   => 'about_freelancing',
-  'type' => 'text',
-  ));
 }
 
 add_action('cmb2_admin_init', 'page_about_meta');
@@ -276,8 +227,8 @@ function page_about_meta() {
       $cmb->add_field(array(
       'name' => 'Intro',
       'desc' => 'Add self intro.',
-      'id'   => 'intro_part',
-      'type' => 'textarea_code',
+      'id'   => 'about_part',
+      'type' => 'textarea_small',
       ));
           
       ;$cmb->add_field( array(
