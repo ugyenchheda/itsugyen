@@ -471,41 +471,6 @@ $contact_website = get_post_meta( get_the_ID(), 'contact_website', true);
 					</div>';
 				}
 			?>
-			<div class="col-md-6">
-			  <div class="timeline-box">
-				<div class="time-line-header">
-				  <p class="timeline-year">2012 - 2015</p>
-				  <h6 class="timeline-title">Art University - New York</h6>
-				</div>
-				<div class="timeline-content">
-				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare.</p>
-				</div>
-			  </div>
-			</div>
-			<!--  Item 02  -->
-			<div class="col-md-6">
-			  <div class="timeline-box">
-				<div class="time-line-header">
-				  <p class="timeline-year">2015 - 2017</p>
-				  <h6 class="timeline-title">Photographer Course - Canada</h6>
-				</div>
-				<div class="timeline-content">
-				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare.</p>
-				</div>
-			  </div>
-			</div>
-			<!--  Item 03  -->
-			<div class="col-md-6">
-			  <div class="timeline-box">
-				<div class="time-line-header">
-				  <p class="timeline-year">2017 - 2019</p>
-				  <h6 class="timeline-title">Writing Course - New York</h6>
-				</div>
-				<div class="timeline-content">
-				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare.</p>
-				</div>
-			  </div>
-			</div>
 		  </div>
 		</div>
 		<!--  TimeLine Experience  -->
@@ -549,54 +514,6 @@ $contact_website = get_post_meta( get_the_ID(), 'contact_website', true);
 					</div>';
 				}
 			?>
-			<!--   Item 01   -->
-			<div class="col-md-6">
-			  <div class="timeline-box">
-				<div class="time-line-header">
-				  <p class="timeline-year">2017 - 2018</p>
-				  <h6 class="timeline-title">Team Leader</h6>
-				</div>
-				<div class="timeline-content">
-				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare.</p>
-				</div>
-			  </div>
-			</div>
-			<!--   Item 02   -->
-			<div class="col-md-6">
-			  <div class="timeline-box">
-				<div class="time-line-header">
-				  <p class="timeline-year">2019 - 2021</p>
-				  <h6 class="timeline-title">Business Photographer</h6>
-				</div>
-				<div class="timeline-content">
-				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare.</p>
-				</div>
-			  </div>
-			</div>
-			<!--   Item 03   -->
-			<div class="col-md-6">
-			  <div class="timeline-box">
-				<div class="time-line-header">
-				  <p class="timeline-year">2019 - 2021</p>
-				  <h6 class="timeline-title">Marketing Managment</h6>
-				</div>
-				<div class="timeline-content">
-				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare.</p>
-				</div>
-			  </div>
-			</div>
-			<!--   Item 04   -->
-			<div class="col-md-6">
-			  <div class="timeline-box">
-				<div class="time-line-header">
-				  <p class="timeline-year">2021 - 2021</p>
-				  <h6 class="timeline-title">Advetising</h6>
-				</div>
-				<div class="timeline-content">
-				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare.</p>
-				</div>
-			  </div>
-			</div>
 		  </div>
 		</div>
 	  </div>
