@@ -125,17 +125,23 @@ $contact_website = get_post_meta( get_the_ID(), 'contact_website', true);
 	  </li>
 	</ul>
 	<div class="menu-footer">
-	  <a class="download-cv primary-button mt-3 mb-4 d-lg-none" href="javascript:void(0);">Download CV</a>
+	  <a class="download-cv primary-button mt-3 mb-4 d-lg-none" href="<?php echo $intro_cv;?>">Download CV</a>
 	  <div class="social d-lg-none d-block">
-		<a href="javascript:void(0);" class="d-inline-block">
-		  <i class="bi bi-whatsapp t-green"></i>
-		</a>
-		<a href="javascript:void(0);" class="d-inline-block mx-4">
-		  <i class="bi bi-instagram t-purple"></i>
-		</a>
-		<a href="javascript:void(0);" class="d-inline-block">
-		  <i class="bi bi-dribbble t-red"></i>
-		</a>
+	  <a href="<?php echo $contact_website; ?>" target="_blank" class="d-inline-block">
+		<i class="bi bi-laptop"></i>
+	  </a>
+	  <a href="<?php echo $contact_github; ?>" target="_blank" class="d-inline-block mx-4">
+		<i class="bi bi-github"></i>
+	  </a>
+	  <a href="<?php echo $contact_facebook; ?>" target="_blank" class="d-inline-block">
+		<i class="bi bi bi-facebook "></i>
+	  </a>
+	  <a href="<?php echo $contact_instagram; ?>" target="_blank" class="d-inline-block mx-4">
+		<i class="bi bi-instagram "></i>
+	  </a>
+	  <a href="<?php echo $contact_whatsapp; ?>" target="_blank" class="d-inline-block">
+		<i class="bi bi-whatsapp"></i>
+	  </a>
 	  </div>
 	</div>
   </div>
@@ -169,17 +175,23 @@ $contact_website = get_post_meta( get_the_ID(), 'contact_website', true);
 	  </div>
 	</div>
 	<div class="ugyen-footer d-block d-lg-none">
-	  <a class="download-cv primary-button mt-3 mb-4 d-lg-none" href="javascript:void(0);">Download CV</a>
+	  <a class="download-cv primary-button mt-3 mb-4 d-lg-none" href="<?php echo $intro_cv;?>">Download CV</a>
 	  <div class="social d-lg-none mb-4 d-block">
-		<a href="javascript:void(0);" class="d-inline-block">
-		  <i class="bi bi-whatsapp t-green"></i>
-		</a>
-		<a href="javascript:void(0);" class="d-inline-block mx-4">
-		  <i class="bi bi-instagram t-purple"></i>
-		</a>
-		<a href="javascript:void(0);" class="d-inline-block">
-		  <i class="bi bi-dribbble t-red"></i>
-		</a>
+	  <a href="<?php echo $contact_website; ?>" target="_blank" class="d-inline-block">
+		<i class="bi bi-laptop"></i>
+	  </a>
+	  <a href="<?php echo $contact_github; ?>" target="_blank" class="d-inline-block mx-4">
+		<i class="bi bi-github"></i>
+	  </a>
+	  <a href="<?php echo $contact_facebook; ?>" target="_blank" class="d-inline-block">
+		<i class="bi bi bi-facebook "></i>
+	  </a>
+	  <a href="<?php echo $contact_instagram; ?>" target="_blank" class="d-inline-block mx-4">
+		<i class="bi bi-instagram "></i>
+	  </a>
+	  <a href="<?php echo $contact_whatsapp; ?>" target="_blank" class="d-inline-block">
+		<i class="bi bi-whatsapp"></i>
+	  </a>
 	  </div>
 	</div>
   </section>

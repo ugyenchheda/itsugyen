@@ -11,10 +11,11 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+	<div class="container">
+		<div class="row">
+			<p class="copyright-wala">Ugyen © 2015–<?php echo date("Y") ; ?>. All rights reserved.	</p>
+		</div>
+	</div>
 
 <?php wp_footer(); ?>
 

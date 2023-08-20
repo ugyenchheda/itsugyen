@@ -80,10 +80,10 @@ if ($next_post) {
         <div class="container">
           <!--  Single Portfolio Start  -->
           <div class="portfolio-page-title">
-            <h1><?php echo get_the_title(); ?></h1>
+            <h1></h1>
           </div>
           <div class="row">
-            <div class="col-lg-7 post-content">
+            <div class="col-lg-6 post-content">
               <div class="single-post">
                   <!-- Item 01 -->
                   <div class="entry-image">
@@ -91,12 +91,12 @@ if ($next_post) {
                   </div>
               </div>
             </div>
-            <aside class="col-lg-4 ms-auto sidebar mt-5 mt-lg-0">
+            <aside class="col-lg-6 ms-auto sidebar mt-5 mt-lg-0">
               <div class="sidbar-wrap">
                 <!-- Categories -->
                 <div class="aside-box">
                   <div class="aside-title">
-                    <h6>Project Details</h6>
+                    <h6><?php echo get_the_title(); ?></h6>
                   </div>
 					<?php echo get_the_content(); ?>  
                 </div>
