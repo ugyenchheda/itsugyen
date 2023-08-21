@@ -815,7 +815,7 @@ function loadingNews() {
     $loaded_post_ids = isset($_POST['loaded_post_ids']) ? $_POST['loaded_post_ids'] : array();
 
     $args = array(
-        'posts_per_page' => 1,
+        'posts_per_page' => 2,
         'post_type'      => 'post',
         'orderby' => 'date',
         'order' => 'DESC',

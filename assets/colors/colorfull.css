@@ -196,7 +196,7 @@ header, .right-side {
   color: #23c1f7;
 }
 .language-bar .language-skill:nth-child(3) ul li i{
-  color: #fbdd62;
+  color: #20bd47;
 }
 /*------------------------- Services -------------------------*/
 .boxes [class^="col-"]:nth-child(2n)::after{
@@ -223,7 +223,7 @@ header, .right-side {
 }
 .resume .vertical-line > div:nth-child(2) .timeline-year {
   color: #fff;
-  background-color: #fbdd62;
+  background-color: #20bd47;
 }
 .resume .vertical-line > div:nth-child(3) .timeline-year {
   color: #fff;
@@ -301,7 +301,7 @@ header, .right-side {
 }
 .boxes .vertical-line > div:nth-child(3) .blog-dates span {
   color: #fff;
-  background-color: #fbdd62;
+  background-color: #20bd47;
 }
 .boxes .vertical-line > div:nth-child(4) .blog-dates span {
   color: #fff;
@@ -383,7 +383,7 @@ header, .right-side {
 }
 .blog-single .entry-meta ul li:nth-child(3) i {
   margin-right: 6px;
-  color: #fbdd62;
+  color: #20bd47;
 }
 .blog-single{
   background-color: #fff;
@@ -398,7 +398,7 @@ header, .right-side {
   border: 1px solid #ff5380;
 }
 .blog-single .comments-list li:nth-child(2) .image-comment {
-  border: 1px solid #fbdd62;
+  border: 1px solid #20bd47;
 }
 .blog-single .comment-reply-link {
   color: #010101;
@@ -451,7 +451,7 @@ header, .right-side {
   background-color: #ff5380;
 }
 .blog-single .about-description-box li:nth-child(3) p::before {
-  background-color: #fbdd62;
+  background-color: #20bd47;
 }
 .blog-single .about-description-box li:nth-child(4) p::before {
   background-color: #23c1f7;
