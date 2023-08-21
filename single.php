@@ -119,6 +119,10 @@ if ($next_post) {
 <!-- Mouase Magic Cursor Start -->
 <div class="m-magic-cursor ucl-outer"></div>
   <div class="m-magic-cursor ucl-inner"></div>
-<!-- Mouase Magic Cursor End -->
+  <div class="container">
+		<div class="row">
+			<p class="copyright-wala">Ugyen © 2015–<?php echo date("Y") ; ?>. All rights reserved.	</p>
+		</div>
+	</div>
 <?php
 get_footer();

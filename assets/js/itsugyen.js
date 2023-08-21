@@ -991,7 +991,7 @@ jQuery(document).ready(function() {
                     loaded_post_ids: loadedPostIds,
                 },
                 beforeSend: function() {
-                    $('#load-more-news').html('<span>Loading <i class="fa fa-spinner fa-spin"></i></span>');
+                    $('#load-more-news').html('<div class="spinner-border text-secondary" role="status"><span class="visually-hidden">Loading...</span></div>');
                 },
                 success: function(response) {
                     $('#load-more-news').text('Load More');
